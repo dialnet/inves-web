@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: "https://jomeridi.github.io",
+  site: process.env.SITE || "https://jomeridi.github.io",
   base: process.env.NODE_ENV === 'production' ? "/portal-inves/" : "/",
   integrations: [react()],
   image: {
