@@ -24,37 +24,37 @@ const {
 } = Astro.props;
 
 const sponsoringUniversities: University[] = [
-  { name: "Universidad de Alcalá", logo: "/logos/UAH.png", url: "https://www.uah.es" },
-  { name: "Universidad de Burgos", logo: "/logos/UBU.png", url: "https://www.ubu.es" },
-  { name: "Universidade da Coruña", logo: "/logos/UDC.png", url: "https://www.udc.es" },
-  { name: "Universidad de Cádiz", logo: "/logos/UCA.png", url: "https://www.uca.es" },
-  { name: "Universidad de La Laguna", logo: "/logos/ULL.png", url: "https://www.ull.es" },
-  { name: "Universidad de La Rioja", logo: "/logos/UR.png", url: "https://www.unirioja.es" },
-  { name: "Universidad de León", logo: "/logos/UNILEON.png", url: "https://www.unileon.es" },
-  { name: "Universidad de Murcia", logo: "/logos/UM.png", url: "https://www.um.es" },
-  { name: "Universidad de Málaga", logo: "/logos/UMA.png", url: "https://www.uma.es" },
-  { name: "UNED", logo: "/logos/UNED.png", url: "https://www.uned.es" },
-  { name: "Universidad Pablo de Olavide", logo: "/logos/UPO.png", url: "https://www.upo.es" },
-  { name: "Universidad del País Vasco / EHU", logo: "/logos/EHU.png", url: "https://www.ehu.eus" },
-  { name: "Universidad de Salamanca", logo: "/logos/USAL.png", url: "https://www.usal.es" },
-  { name: "Universidade de Santiago de Compostela", logo: "/logos/USC.png", url: "https://www.usc.es" },
-  { name: "Universidad de Valladolid", logo: "/logos/UVA.png", url: "https://www.uva.es" },
-  { name: "Universitat de València", logo: "/logos/UV.png", url: "https://www.uv.es" }
+  { name: "Universidad de Alcalá", logo: import.meta.env.BASE_URL + "logos/UAH.png", url: "https://www.uah.es" },
+  { name: "Universidad de Burgos", logo: import.meta.env.BASE_URL + "logos/UBU.png", url: "https://www.ubu.es" },
+  { name: "Universidade da Coruña", logo: import.meta.env.BASE_URL + "logos/UDC.png", url: "https://www.udc.es" },
+  { name: "Universidad de Cádiz", logo: import.meta.env.BASE_URL + "logos/UCA.png", url: "https://www.uca.es" },
+  { name: "Universidad de La Laguna", logo: import.meta.env.BASE_URL + "logos/ULL.png", url: "https://www.ull.es" },
+  { name: "Universidad de La Rioja", logo: import.meta.env.BASE_URL + "logos/UR.png", url: "https://www.unirioja.es" },
+  { name: "Universidad de León", logo: import.meta.env.BASE_URL + "logos/UNILEON.png", url: "https://www.unileon.es" },
+  { name: "Universidad de Murcia", logo: import.meta.env.BASE_URL + "logos/UM.png", url: "https://www.um.es" },
+  { name: "Universidad de Málaga", logo: import.meta.env.BASE_URL + "logos/UMA.png", url: "https://www.uma.es" },
+  { name: "UNED", logo: import.meta.env.BASE_URL + "logos/UNED.png", url: "https://www.uned.es" },
+  { name: "Universidad Pablo de Olavide", logo: import.meta.env.BASE_URL + "logos/UPO.png", url: "https://www.upo.es" },
+  { name: "Universidad del País Vasco / EHU", logo: import.meta.env.BASE_URL + "logos/EHU.png", url: "https://www.ehu.eus" },
+  { name: "Universidad de Salamanca", logo: import.meta.env.BASE_URL + "logos/USAL.png", url: "https://www.usal.es" },
+  { name: "Universidade de Santiago de Compostela", logo: import.meta.env.BASE_URL + "logos/USC.png", url: "https://www.usc.es" },
+  { name: "Universidad de Valladolid", logo: import.meta.env.BASE_URL + "logos/UVA.png", url: "https://www.uva.es" },
+  { name: "Universitat de València", logo: import.meta.env.BASE_URL + "logos/UV.png", url: "https://www.uv.es" }
 ];
 
 const participatingUniversities: University[] = [
-  { name: "Universidad de Alicante", logo: "/logos/UA.png", url: "https://www.ua.es" },
-  { name: "Universidad Complutense de Madrid", logo: "/logos/UCM.png", url: "https://www.ucm.es" },
-  { name: "Universidad de Granada", logo: "/logos/UGR.png", url: "https://www.ugr.es" },
-  { name: "Universidad de Huelva", logo: "/logos/UHU.png", url: "https://www.uhu.es" },
-  { name: "Universidad de Jaén", logo: "/logos/UJAEN.png", url: "https://www.ujaen.es" },
-  { name: "Universitat de Lleida", logo: "/logos/UDL.png", url: "https://www.udl.cat" },
-  { name: "Universidad de Oviedo", logo: "/logos/UNIOVI.png", url: "https://www.uniovi.es" },
-  { name: "Universidad Politécnica de Cartagena", logo: "/logos/UPCT.png", url: "https://www.upct.es" },
-  { name: "Universidad Pública de Navarra", logo: "/logos/UNAVARRA.png", url: "https://www.unavarra.es" },
-  { name: "Universidad Miguel Hernández", logo: "/logos/UMH.png", url: "https://www.umh.es" },
-  { name: "Universitat de les Illes Balears", logo: "/logos/UIB.png", url: "https://www.uib.es" },
-  { name: "Universitat Jaume I", logo: "/logos/UJI.png", url: "https://www.uji.es" }
+  { name: "Universidad de Alicante", logo: import.meta.env.BASE_URL + "logos/UA.png", url: "https://www.ua.es" },
+  { name: "Universidad Complutense de Madrid", logo: import.meta.env.BASE_URL + "logos/UCM.png", url: "https://www.ucm.es" },
+  { name: "Universidad de Granada", logo: import.meta.env.BASE_URL + "logos/UGR.png", url: "https://www.ugr.es" },
+  { name: "Universidad de Huelva", logo: import.meta.env.BASE_URL + "logos/UHU.png", url: "https://www.uhu.es" },
+  { name: "Universidad de Jaén", logo: import.meta.env.BASE_URL + "logos/UJAEN.png", url: "https://www.ujaen.es" },
+  { name: "Universitat de Lleida", logo: import.meta.env.BASE_URL + "logos/UDL.png", url: "https://www.udl.cat" },
+  { name: "Universidad de Oviedo", logo: import.meta.env.BASE_URL + "logos/UNIOVI.png", url: "https://www.uniovi.es" },
+  { name: "Universidad Politécnica de Cartagena", logo: import.meta.env.BASE_URL + "logos/UPCT.png", url: "https://www.upct.es" },
+  { name: "Universidad Pública de Navarra", logo: import.meta.env.BASE_URL + "logos/UNAVARRA.png", url: "https://www.unavarra.es" },
+  { name: "Universidad Miguel Hernández", logo: import.meta.env.BASE_URL + "logos/UMH.png", url: "https://www.umh.es" },
+  { name: "Universitat de les Illes Balears", logo: import.meta.env.BASE_URL + "logos/UIB.png", url: "https://www.uib.es" },
+  { name: "Universitat Jaume I", logo: import.meta.env.BASE_URL + "logos/UJI.png", url: "https://www.uji.es" }
 ];
 ---
 
