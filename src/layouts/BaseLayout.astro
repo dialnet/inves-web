@@ -5,6 +5,9 @@ import Footer from '@components/Footer.astro';
 import { SITE } from '@config/site';
 import { languages } from '../i18n/ui';
 
+// Detectamos si el sitio es el de pruebas (GitHub) para aplicar privacidad
+const isTestSite = import.meta.env.SITE?.includes('jomeridi.github.io');
+
 interface Props {
   title?: string;
   description?: string;
@@ -27,6 +30,9 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    {isTestSite && <meta name="robots" content="noindex, nofollow" />}
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
