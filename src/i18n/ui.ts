@@ -11,6 +11,7 @@ export const ui = {
     es: {
         'hero.title': 'Inv-es: Portal Interuniversitario de Producción Científica',
         'hero.subtitle': 'Un espacio común para la visibilidad, consulta y transferencia del conocimiento generado en el ámbito académico español.',
+        'hero.badge': 'Espacio común de conocimiento compartido',
         'hero.button': 'Más información',
         'university.sponsors': 'Universidades Patrocinadoras',
         'university.participants': 'Otras Universidades Participantes',
@@ -40,6 +41,7 @@ export const ui = {
     ca: {
         'hero.title': 'Inv-es: Portal Interuniversitari de Producció Científica',
         'hero.subtitle': 'Un espai comú per a la visibilitat, consulta i transferència del coneixement generat en l\'àmbit acadèmic espanyol.',
+        'hero.badge': 'Espai comú de coneixement compartit',
         'hero.button': 'Més informació',
         'university.sponsors': 'Universitats Patrocinadores',
         'university.participants': 'Altres Universitats Participants',
@@ -69,6 +71,7 @@ export const ui = {
     eu: {
         'hero.title': 'Inv-es: Ekoizpen Zientifikoko Unibertsitate arteko Ataria',
         'hero.subtitle': 'Espainiako eremu akademikoan sortutako ezagutzaren ikusgarritasunerako, kontsultarako eta transferentziarako espazio komuna.',
+        'hero.badge': 'Ezagutza partekaturako espazio komuna',
         'hero.button': 'Informazio gehiago',
         'university.sponsors': 'Unibertsitate Babesleak',
         'university.participants': 'Parte hartzen duten beste unibertsitate batzuk',
@@ -98,6 +101,7 @@ export const ui = {
     gl: {
         'hero.title': 'Inv-es: Portal Interuniversitario de Produción Científica',
         'hero.subtitle': 'Un espazo común para a visibilidade, consulta e transferencia do coñecemento xerado no ámbito académico español.',
+        'hero.badge': 'Espazo común de coñecemento compartido',
         'hero.button': 'Máis información',
         'university.sponsors': 'Universidades Patrocinadoras',
         'university.participants': 'Outras Universidades Participantes',
