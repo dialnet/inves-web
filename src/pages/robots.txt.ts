@@ -1,4 +1,3 @@
-// src/pages/robots.txt.ts
 import type { APIRoute } from 'astro';
 
 const robotsPublico = `User-agent: *

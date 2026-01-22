@@ -12,8 +12,7 @@ export default function RFQForm() {
     
     // In a real application, you would send this to your backend
     console.log('Form submitted:', data);
-    
-    // Show success message
+
     alert('Thank you for your request! We will contact you within 24 hours.');
     form.reset();
   };

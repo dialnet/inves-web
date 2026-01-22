@@ -15,7 +15,6 @@ interface Props {
 
 const currentPathname = Astro.url.pathname;
 
-// Detect current locale from pathname
 const segments = currentPathname.split('/').filter(Boolean);
 const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] : 'es';
 const siteInfo = SITE[currentLocale as keyof typeof SITE] || SITE.es;

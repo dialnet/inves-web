@@ -1,11 +1,9 @@
-
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
 import 'dotenv/config';
 
-// Credentials
 const USER = process.env.SCRAPE_USER || 'dialnet';
 const PASS = process.env.SCRAPE_PASS || 'dialnet';
 const URL_TO_SCRAPE = process.env.SCRAPE_URL || 'https://inv-es.portalcientifico.es/';
@@ -28,17 +26,8 @@ async function scrapeStats() {
     const html = await response.text();
     const $ = cheerio.load(html);
 
-    // Extract data
-    // Based on the user snippet:
-    // <div class="index-contadores__contador">
-    //   <a href="investigadores">
-    //     <div class="index-contadores__contador-valor">73.322</div>
-    //     <div class="index-contadores__contador-titulo">Investigadores/as</div>
-    //   </a>
-    // </div>
-
     const stats = {
-      universities: "0", // Will be scraped
+      universities: "0",
       researchers: "0",
       groups: "0",
       publications: "0",
@@ -57,16 +46,13 @@ async function scrapeStats() {
         stats.groups = val;
       } else if (title.includes('publicaciones')) {
         stats.publications = val;
-      } else if (title.includes('acceso abierto')) { // Verify exact text for open access
+      } else if (title.includes('acceso abierto')) {
         stats.openAccess = val;
       }
     });
 
-    // Current stats.json relies on: universities, researchers, groups, publications, openAccess
-    // Let's print what we found
     console.log('Scraped data:', stats);
 
-    // Write to file
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(stats, null, 4));
     console.log(`Updated ${OUTPUT_FILE}`);
 
