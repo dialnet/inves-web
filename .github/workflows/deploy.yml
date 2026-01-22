@@ -2,6 +2,8 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches: [main] # Se ejecuta cada vez que se sube algo a main
+  schedule:
+    - cron: '0 0 * * *' # Se ejecuta todos los días a medianoche
 permissions:
   contents: read
   pages: write
@@ -12,6 +14,22 @@ jobs:
     steps:
       - name: Checkout your repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run scraping script
+        env:
+          SCRAPE_USER: ${{ secrets.SCRAPE_USER }}
+          SCRAPE_PASS: ${{ secrets.SCRAPE_PASS }}
+          SCRAPE_URL: ${{ secrets.SCRAPE_URL }}
+        run: npm run update-stats
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3 # Acción oficial de Astro
   deploy:
