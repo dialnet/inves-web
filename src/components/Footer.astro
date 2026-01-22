@@ -18,13 +18,16 @@ const rawNavItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVI
 const siteInfo = SITE[currentLocale as keyof typeof SITE] || SITE.es;
 const t = ui[currentLocale as keyof typeof ui] || ui.es;
 
-const formatUrl = (url: string) => {
+const formatUrl = (url: string, isExternal: boolean = false) => {
+  if (isExternal || url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
   return base + url;
 };
 
 const navItems = rawNavItems.map(item => ({
-  ...item, 
-  href: formatUrl(item.href)
+  ...item,
+  href: formatUrl(item.href, 'external' in item && item.external)
 }));
 ---
 
