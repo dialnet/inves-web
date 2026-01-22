@@ -2,12 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { languages, ui, defaultLang } from '../i18n/ui';
 
-// Detect current locale from pathname
 const currentPathname = Astro.url.pathname;
 const segments = currentPathname.split('/').filter(Boolean);
 const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] as keyof typeof ui : defaultLang;
 
-// Get translations
 const t = ui[currentLocale];
 ---
 

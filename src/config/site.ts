@@ -1,4 +1,3 @@
-// Site configuration
 export const SITE = {
   es: {
     title: 'Inv-es | Portal Interuniversitario de Producción Científica',

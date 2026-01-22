@@ -16,18 +16,16 @@ const isActiveLink = (href: string) : boolean => {
 };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const purePath = currentPathname.startsWith(base) && base.length > 0 
-  ? currentPathname.slice(base.length) 
+const purePath = currentPathname.startsWith(base) && base.length > 0
+  ? currentPathname.slice(base.length)
   : currentPathname;
 
-// Detect current locale from purePath
 const segments = purePath.split('/').filter(Boolean);
 const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] : 'es';
 
 const rawNavItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
 
 const formatUrl = (url: string, isExternal: boolean = false) => {
-  // No agregar base si es una URL externa (comienza con http:// o https://)
   if (isExternal || url.startsWith('http://') || url.startsWith('https://')) {
     return url;
   }

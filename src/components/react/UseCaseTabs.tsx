@@ -34,7 +34,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function UseCaseTabs({ useCases }: Props) {
-  // Get unique industries
   const industries = Array.from(new Set(useCases.map((uc) => uc.industry)));
 
   return (
