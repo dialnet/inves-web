@@ -26,13 +26,17 @@ const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0
 
 const rawNavItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
 
-const formatUrl = (url: string) => {
+const formatUrl = (url: string, isExternal: boolean = false) => {
+  // No agregar base si es una URL externa (comienza con http:// o https://)
+  if (isExternal || url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
   return base + url;
 };
 
 const navItems = rawNavItems.map(item => ({
-  ...item, 
-  href: formatUrl(item.href)
+  ...item,
+  href: formatUrl(item.href, 'external' in item && item.external)
 }));
 
 const getLocalizedPath = (purePathname: string, locale: string) => {
