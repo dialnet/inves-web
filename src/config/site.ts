@@ -19,6 +19,7 @@ export const NAVIGATION = {
     { name: 'Participantes', href: '/es/participantes' },
     { name: 'Gobernanza', href: '/es/gobernanza' },
     { name: 'Contacto', href: '/es/contacto' },
+    { name: 'Portal', href: 'https://inv-es.portalcientifico.es/', external: true },
   ],
   en: [
     { name: 'Home', href: '/en' },
@@ -26,6 +27,7 @@ export const NAVIGATION = {
     { name: 'Participants', href: '/en/participants' },
     { name: 'Governance', href: '/en/governance' },
     { name: 'Contact', href: '/en/contact' },
+    { name: 'Portal', href: 'https://inv-es.portalcientifico.es/?lang=en', external: true },
   ],
 } as const;
 
