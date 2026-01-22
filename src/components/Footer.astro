@@ -44,10 +44,10 @@ const navItems = rawNavItems.map(item => ({
                 />
             </div>
              <div>
-                <a href="https://next-generation-eu.europa.eu/index_es" target="_blank" rel="noopener noreferrer">
+                <a href={currentLocale === 'en' ? "https://next-generation-eu.europa.eu/index_en" : "https://next-generation-eu.europa.eu/index_es"} target="_blank" rel="noopener noreferrer">
                     <img 
-                      src={base + '/logos/NextGenerationEU_es.png'} 
-                      alt="Financiado por la Unión Europea - NextGenerationEU" 
+                      src={base + `/logos/NextGenerationEU_${currentLocale}.png`} 
+                      alt={currentLocale === 'en' ? "Funded by the European Union - NextGenerationEU" : "Financiado por la Unión Europea - NextGenerationEU"} 
                       class="w-auto h-auto"
                     />
                 </a>
@@ -55,7 +55,7 @@ const navItems = rawNavItems.map(item => ({
             <div>
                 <a href="https://planderecuperacion.gob.es/" target="_blank" rel="noopener noreferrer">
                     <img 
-                      src={base + `/logos/logo-PRTR_${currentLocale}.png`} 
+                      src={base + `/logos/logo-PRTR_es.png`} 
                       alt="Plan de Recuperación, Transformación y Resiliencia" 
                       class="w-auto h-auto"
                     />
@@ -88,74 +88,6 @@ const navItems = rawNavItems.map(item => ({
         </ul>
       </div>
 
-      <!-- Services -->
-      <div>
-        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">
-          Services
-        </h3>
-        <ul class="space-y-3">
-          <li>
-            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Warehousing & Storage
-            </a>
-          </li>
-          <li>
-            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Transportation
-            </a>
-          </li>
-          <li>
-            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Manufacturing
-            </a>
-          </li>
-          <li>
-            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Supply Chain Management
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">
-          Get Started
-        </h3>
-        <ul class="space-y-3 text-sm">
-          <li>
-            <a href="/rfq" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Request a Quote
-            </a>
-          </li>
-          <li>
-            <a href="/facilities" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Find a Facility
-            </a>
-          </li>
-          <li>
-            <a href="/documentation" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
-              Documentation
-            </a>
-          </li>
-        </ul>
-        
-        <div class="mt-8">
-          <a
-            href="/rfq"
-            class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-lg hover:shadow-xl transition-all"
-          >
-            Get Started
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- Bottom Bar -->
@@ -164,19 +96,6 @@ const navItems = rawNavItems.map(item => ({
         <p class="text-sm text-slate-600">
            {t['footer.copyright'].replace('{year}', new Date().getFullYear().toString())}
         </p>
-        <div class="flex items-center space-x-6 text-sm">
-          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
-            Privacy Policy
-          </a>
-          <span class="text-slate-300">•</span>
-          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
-            Terms of Service
-          </a>
-          <span class="text-slate-300">•</span>
-          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
-            Cookie Policy
-          </a>
-        </div>
       </div>
     </div>
   </div>

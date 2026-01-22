@@ -21,8 +21,11 @@ pnpm-debug.log*
 .DS_Store
 
 # jetbrains setting folder
-# jetbrains setting folder
 .idea/
 
 # documentation
 notas.md
+
+# gemini
+GEMINI.md
+gemini.md
