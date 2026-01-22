@@ -4,13 +4,17 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   class?: string;
+  target?: string;
+  rel?: string;
 }
 
 const {
   variant = 'primary',
   size = 'md',
   href,
-  class: className = ''
+  class: className = '',
+  target,
+  rel
 } = Astro.props;
 
 const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95';
@@ -32,6 +36,6 @@ const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${c
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag href={href} class={classes}>
+<Tag href={href} target={target} rel={rel} class={classes}>
     <slot />
 </Tag>

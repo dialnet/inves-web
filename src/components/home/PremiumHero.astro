@@ -7,13 +7,19 @@ interface Props {
   title?: string;
   subtitle?: string;
   buttonText?: string;
+  buttonHref?: string;
+  buttonPortalText?: string;
+  buttonPortalHref?: string;
   badgeText?: string;
 }
 
-const { 
+const {
   title = "Inv-es: Portal Interuniversitario de Producción Científica",
   subtitle = "Un espacio común para la visibilidad, consulta y transferencia del conocimiento generado en el ámbito académico español.",
   buttonText = "Más información",
+  buttonHref = "/es/proyecto",
+  buttonPortalText = "Acceder al portal",
+  buttonPortalHref = "https://inv-es.portalcientifico.es/",
   badgeText = "Espacio común de conocimiento compartido"
 } = Astro.props;
 ---
@@ -52,8 +58,14 @@ const {
       </p>
       
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <Button href="#proyecto" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+        <Button href={buttonHref} size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
           {buttonText}
+        </Button>
+        <Button href={buttonPortalHref} size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!" target="_blank" rel="noopener noreferrer">
+          {buttonPortalText}
+          <svg class="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
         </Button>
       </div>
 
