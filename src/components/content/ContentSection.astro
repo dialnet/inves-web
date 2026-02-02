@@ -18,8 +18,13 @@ const {
   centered = false,
   maxWidth = "default",
   paddingY = "large",
-  backgroundImage,
+  backgroundImage: rawBackgroundImage,
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const backgroundImage = rawBackgroundImage?.startsWith("/")
+  ? `${base}${rawBackgroundImage}`
+  : rawBackgroundImage;
 
 const bgClasses = {
   white: "bg-white",

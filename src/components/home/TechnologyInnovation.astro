@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const techDashboardImg =
-  "https://loremflickr.com/1200/800/technology,dashboard";
+const techDashboardImg = "/tech-bg.png";
 
 interface Technology {
   title: string;
@@ -11,31 +10,31 @@ interface Technology {
 }
 
 interface Props {
-  projectLabel?: string;
-  projectTitle?: string;
-  projectDesc?: string;
-  originTitle?: string;
-  originDesc?: string;
-  objectiveTitle?: string;
-  objectiveDesc?: string;
-  futureTitle?: string;
-  futureDesc?: string;
-  frameTitle?: string;
-  frameDesc?: string;
+  projectLabel: string;
+  projectTitle: string;
+  projectDesc: string;
+  originTitle: string;
+  originDesc: string;
+  objectiveTitle: string;
+  objectiveDesc: string;
+  futureTitle: string;
+  futureDesc: string;
+  frameTitle: string;
+  frameDesc: string;
 }
 
 const {
-  projectLabel = "Sobre el Proyecto",
-  projectTitle = "Transparencia y Objetivos",
-  projectDesc = "Inv-es es una iniciativa estratégica para consolidar y dar visibilidad a la producción científica del sistema universitario español.",
-  originTitle = "Origen de los Datos",
-  originDesc = "Integración de información procedente de los CRIS (Current Research Information System) de las universidades participantes.",
-  objectiveTitle = "Objetivo Principal",
-  objectiveDesc = "Crear un punto de acceso unificado a los resultados de investigación para facilitar su visibilidad y transferencia a la sociedad.",
-  futureTitle = "Acciones Futuras",
-  futureDesc = "Incorporación progresiva de nuevas universidades y desarrollo de herramientas de análisis bibliométrico avanzado.",
-  frameTitle = "Marco Institucional",
-  frameDesc = "Iniciativa conjunta de las universidades españolas bajo el amparo del Ministerio de Ciencia, Innovación y Universidades (UniDigital).",
+  projectLabel,
+  projectTitle,
+  projectDesc,
+  originTitle,
+  originDesc,
+  objectiveTitle,
+  objectiveDesc,
+  futureTitle,
+  futureDesc,
+  frameTitle,
+  frameDesc,
 } = Astro.props;
 
 const technologies: Technology[] = [
@@ -152,7 +151,7 @@ const technologies: Technology[] = [
         <div class="relative rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src={techDashboardImg}
-            alt="Advanced logistics technology dashboard"
+            alt="Análisis de datos de producción científica"
             class="w-full h-full object-cover"
             width={1200}
             height={800}

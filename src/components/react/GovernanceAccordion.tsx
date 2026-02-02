@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Root, Item, Header, Trigger, Content } from '@radix-ui/react-accordion';
 import { ChevronDown, Landmark, Settings, Cpu, Users } from 'lucide-react';
 import type { GovernanceBody } from '../../types/governance';
@@ -15,13 +15,12 @@ interface Props {
 }
 
 export default function GovernanceAccordion({ bodies }: Props) {
-  useEffect(() => {
-    console.log('GovernanceAccordion interactive');
-    console.log('Bodies available:', bodies?.length);
-  }, [bodies]);
-
   if (!bodies || bodies.length === 0) {
-    return <div className="text-center py-8">No hay contenido disponible</div>;
+    return (
+      <div className="text-center py-12 px-4 rounded-xl border-2 border-dashed border-slate-200 text-slate-500">
+        No hay contenido disponible en este momento
+      </div>
+    );
   }
 
   return (
