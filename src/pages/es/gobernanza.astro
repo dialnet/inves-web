@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentSection from "../../components/content/ContentSection.astro";
+import ContentCard from "../../components/content/ContentCard.astro";
+import GovernanceAccordion from "../../components/react/GovernanceAccordion";
+import type { GovernanceBody } from "../../types/governance";
+
+const governanceBodies: GovernanceBody[] = [
+  {
+    title: "Consejo de Dirección Estratégica",
+    description: "Máximo órgano de gobierno del proyecto",
+    icon: "Landmark",
+    content:
+      "El Consejo de Dirección Estratégica es el máximo órgano de gobierno del proyecto y tiene como responsabilidad principal la definición de la visión estratégica e institucional de INV.es.\n\nEstá compuesto por un vicerrector o vicerrectora de cada una de las universidades socias promotoras del proyecto y por la Directora de la Fundación Dialnet, en su papel de proveedor tecnológico y socio estratégico.",
+    functions: [
+      "Asegurar la alineación del portal con las políticas nacionales de ciencia e investigación.",
+      "Aprobar la estrategia de incorporación de nuevas universidades u otras instituciones.",
+      "Establecer acuerdos marco con terceros.",
+      "Supervisar la sostenibilidad económica y técnica del proyecto.",
+      "Impulsar la normalización de datos clave de la producción científica.",
+      "Validar nuevas funcionalidades estratégicas y definir su modelo de uso.",
+    ],
+    footer:
+      "El Consejo se reúne con carácter trimestral y puede delegar funciones ejecutivas en una Comisión Ejecutiva. La presidencia y vicepresidencia del Consejo son rotatorias entre las universidades, siguiendo un sistema que garantiza la participación equilibrada y la continuidad del liderazgo.",
+  },
+  {
+    title: "Comité de Coordinación Operativa",
+    description:
+      "Órgano responsable de la gestión coordinada de los procesos funcionales",
+    icon: "Settings",
+    content:
+      "El Comité de Coordinación Operativa es el órgano responsable de la gestión coordinada de los procesos funcionales y de la propuesta de mejoras tecnológicas.\n\nEstá integrado por un representante operativo de cada universidad socia con capacidad de decisión, así como por los responsables técnicos de la Fundación Dialnet en los ámbitos de tecnología y contenidos.",
+    functions: [
+      "Coordinar las necesidades operativas de las universidades.",
+      "Gestionar el ciclo de vida de los servicios ofrecidos por el portal.",
+      "Resolver problemas comunes y proponer mejoras funcionales.",
+      "Coordinar la incorporación de nuevas funcionalidades, módulos o instituciones.",
+      "Velar por el cumplimiento de los estándares de calidad, metadatos e interoperabilidad.",
+    ],
+    footer:
+      "El Comité se reúne siempre que sea necesario, con una periodicidad mínima trimestral.",
+  },
+  {
+    title: "Fundación Dialnet: soporte, coordinación y tecnología",
+    description:
+      "Entidad responsable de la coordinación general y gestión tecnológica",
+    icon: "Cpu",
+    content:
+      "La Fundación Dialnet desempeña un papel central en la gobernanza de INV.es como entidad responsable de la coordinación general, el soporte continuo y la gestión tecnológica del sistema.\n\nEntre sus funciones se incluyen:",
+    functions: [
+      "La gestión y evolución de la plataforma tecnológica INV.es.",
+      "El almacenamiento, actualización y gestión de los datos.",
+      "El avance en la interoperabilidad con repositorios y otros sistemas CRIS.",
+      "La gestión de incidencias y el soporte técnico.",
+      "La propuesta de innovaciones tecnológicas basadas en el uso y las métricas del portal.",
+    ],
+    footer:
+      "Este modelo se articula como un servicio SaaS, y contempla un marco de sostenibilidad que compensa los costes asumidos por la Fundación.",
+  },
+  {
+    title: "Coordinación con los grupos de trabajo de DialnetCRIS",
+    description:
+      "Órganos de consulta y colaboración para la evolución funcional",
+    icon: "Users",
+    content:
+      "La gobernanza de INV.es se apoya, además, en los grupos de trabajo de DialnetCRIS, que actúan como órganos de consulta y colaboración para la evolución funcional y técnica del sistema.\n\nEstos grupos permiten identificar necesidades comunes, priorizar desarrollos y testar nuevas herramientas y servicios. Actualmente existen grupos de trabajo activos en ámbitos como la evaluación de la investigación y la integración con sistemas de gestión de la investigación (SGI), entre otros.\n\nLa estructura se completa con un grupo coordinador y con la supervisión última del Comité de Dirección de la Fundación Dialnet, garantizando así una evolución coherente, participativa y alineada con la estrategia global del proyecto.",
+  },
+];
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 py-20"
+  >
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">GOBERNANZA</h1>
+      <p class="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
+        Un modelo de gobernanza multinivel para garantizar una toma de
+        decisiones coordinada y transparente
+      </p>
+    </div>
+  </section>
+
+  <!-- Introducción -->
+  <ContentSection
+    background="white"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/governance-bg.png"
+  >
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          El proyecto INV.es cuenta con un modelo de gobernanza multinivel
+          diseñado para garantizar una toma de decisiones coordinada,
+          transparente y alineada con las políticas nacionales en materia de
+          ciencia e investigación. Este modelo permite combinar la visión
+          estratégica institucional con una gestión técnica y operativa
+          eficiente, apoyándose en la experiencia acumulada de la Fundación
+          Dialnet y en la colaboración activa de las universidades
+          participantes.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- Modelo Multinivel -->
+  <ContentSection
+    background="slate"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/strategy-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">
+          Un modelo de gobernanza multinivel
+        </h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Coordinación, transparencia y política científica
+        </p>
+      </div>
+    </div>
+    <p class="text-lg text-white/90 leading-relaxed font-medium">
+      La gobernanza de INV.es se estructura en distintos niveles
+      complementarios, cada uno con responsabilidades claramente definidas, que
+      permiten abordar tanto las decisiones estratégicas de alcance nacional
+      como la gestión operativa y la evolución tecnológica del portal.
+    </p>
+  </ContentSection>
+
+  <!-- Órganos de Gobernanza - Accordion -->
+  <ContentSection background="white" paddingY="small" maxWidth="wide">
+    <GovernanceAccordion client:load bodies={governanceBodies} />
+  </ContentSection>
+
+  <!-- Conclusión -->
+  <ContentSection
+    background="gradient"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/tech-bg.png"
+  >
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed">
+        <p>
+          Este modelo de gobernanza asegura que INV.es se consolide como una
+          infraestructura compartida, sostenible y en constante evolución, al
+          servicio del sistema universitario español y de la visibilidad de su
+          producción científica.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+</BaseLayout>

@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentSection from "../../components/content/ContentSection.astro";
+import ContentCard from "../../components/content/ContentCard.astro";
+import GovernanceAccordion from "../../components/react/GovernanceAccordion";
+import type { GovernanceBody } from "../../types/governance";
+
+const governanceBodies: GovernanceBody[] = [
+  {
+    title: "Strategic Steering Council",
+    description: "Highest governing body of the project",
+    icon: "Landmark",
+    content:
+      "The Strategic Steering Council is the highest governing body of the project and has as its main responsibility the definition of the strategic and institutional vision of INV.es.\n\nIt is composed of one vice-rector from each of the partner universities promoting the project and the Director of the Dialnet Foundation, in their role as technology provider and strategic partner.",
+    footer:
+      "The Council meets quarterly and can delegate executive functions to an Executive Committee. The presidency and vice-presidency of the Council rotate among the universities, following a system that ensures balanced participation and continuity of leadership.",
+    functions: [
+      "Ensure alignment of the portal with national science and research policies.",
+      "Approve the strategy for incorporating new universities or other institutions.",
+      "Establish framework agreements with third parties.",
+      "Supervise the economic and technical sustainability of the project.",
+      "Promote the standardization of key data on scientific production.",
+      "Validate new strategic functionalities and define their usage model.",
+    ],
+  },
+  {
+    title: "Operational Coordination Committee",
+    description:
+      "Body responsible for coordinated management of functional processes",
+    icon: "Settings",
+    content:
+      "The Operational Coordination Committee is the body responsible for the coordinated management of functional processes and the proposal of technological improvements.\n\nIt is composed of one operational representative from each partner university with decision-making capacity, as well as the technical leaders of the Dialnet Foundation in the areas of technology and content.",
+    functions: [
+      "Coordinate the operational needs of the universities.",
+      "Manage the lifecycle of services offered by the portal.",
+      "Resolve common problems and propose functional improvements.",
+      "Coordinate the incorporation of new functionalities, modules, or institutions.",
+      "Ensure compliance with quality, metadata, and interoperability standards.",
+    ],
+    footer:
+      "The Committee meets as needed, with a minimum quarterly frequency.",
+  },
+  {
+    title: "Dialnet Foundation: support, coordination and technology",
+    description:
+      "Entity responsible for overall coordination and technological management",
+    icon: "Cpu",
+    content:
+      "The Dialnet Foundation plays a central role in the governance of INV.es as the entity responsible for overall coordination, ongoing support, and technological management of the system.\n\nAmong its functions are:",
+    functions: [
+      "Management and evolution of the INV.es technological platform.",
+      "Storage, updating, and data management.",
+      "Advancement in interoperability with repositories and other CRIS systems.",
+      "Incident management and technical support.",
+      "Proposal of technological innovations based on portal usage and metrics.",
+    ],
+    footer:
+      "This model is structured as a SaaS service and includes a sustainability framework that compensates for the costs assumed by the Foundation.",
+  },
+  {
+    title: "Coordination with DialnetCRIS working groups",
+    description:
+      "Consultation and collaboration bodies for functional evolution",
+    icon: "Users",
+    content:
+      "The governance of INV.es is also supported by the DialnetCRIS working groups, which act as consultation and collaboration bodies for the functional and technical evolution of the system.\n\nThese groups allow identifying common needs, prioritizing developments, and testing new tools and services. Currently, there are active working groups in areas such as research evaluation and integration with research management systems (RMS), among others.\n\nThe structure is completed with a coordinating group and the ultimate supervision of the Dialnet Foundation's Steering Committee, thus ensuring a coherent, participatory evolution aligned with the overall strategy of the project.",
+  },
+];
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 py-20"
+  >
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">GOVERNANCE</h1>
+      <p class="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
+        A multi-level governance model to ensure coordinated and transparent
+        decision-making
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <ContentSection
+    background="white"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/governance-bg.png"
+  >
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          The INV.es project has a multi-level governance model designed to
+          guarantee coordinated, transparent decision-making aligned with
+          national science and research policies. This model allows combining
+          institutional strategic vision with efficient technical and
+          operational management, relying on the accumulated experience of the
+          Dialnet Foundation and the active collaboration of participating
+          universities.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- Multi-level Model -->
+  <ContentSection
+    background="slate"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/strategy-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">
+          A multi-level governance model
+        </h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Coordination, transparency, and science policy
+        </p>
+      </div>
+    </div>
+    <p class="text-lg text-white/90 leading-relaxed font-medium">
+      The governance of INV.es is structured in different complementary levels,
+      each with clearly defined responsibilities, which allow addressing both
+      strategic decisions of national scope as well as operational management
+      and technological evolution of the portal.
+    </p>
+  </ContentSection>
+
+  <!-- Governance Bodies - Accordion -->
+  <ContentSection background="white" paddingY="small" maxWidth="wide">
+    <GovernanceAccordion client:load bodies={governanceBodies} />
+  </ContentSection>
+
+  <!-- Conclusion -->
+  <ContentSection
+    background="gradient"
+    paddingY="small"
+    maxWidth="wide"
+    backgroundImage="/tech-bg.png"
+  >
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed">
+        <p>
+          This governance model ensures that INV.es establishes itself as a
+          shared, sustainable, and constantly evolving infrastructure, at the
+          service of the Spanish university system and the visibility of its
+          scientific production.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+</BaseLayout>

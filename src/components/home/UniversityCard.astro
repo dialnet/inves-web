@@ -3,28 +3,46 @@ interface Props {
   name: string;
   logo: string;
   url: string;
+  class?: string;
 }
 
-const { name, logo, url } = Astro.props;
+const { name, logo, url, class: className } = Astro.props;
 ---
 
-<a 
-  href={url} 
-  target="_blank" 
+<a
+  href={url}
+  target="_blank"
   rel="noopener noreferrer"
-  class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100 flex flex-col items-center text-center h-full"
+  class:list={[
+    "group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100 flex flex-col items-center text-center h-full",
+    className,
+  ]}
 >
-  <div class="w-full h-32 flex items-center justify-center bg-slate-50 rounded-lg mb-4">
-    <img 
-      src={logo} 
+  <div
+    class="w-full h-32 flex items-center justify-center bg-slate-50 rounded-lg mb-4"
+  >
+    <img
+      src={logo}
       alt={`Logo ${name}`}
       class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
     />
   </div>
   <div class="flex items-center justify-center gap-2">
-    <span class="text-base font-semibold text-slate-900 text-balance">{name}</span>
-    <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    <span class="text-base font-semibold text-slate-900 text-balance"
+      >{name}</span
+    >
+    <svg
+      class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+      ></path>
     </svg>
   </div>
 </a>
