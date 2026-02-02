@@ -1,7 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import Button from '../ui/Button.astro';
-
+import { Image } from "astro:assets";
+import Button from "../ui/Button.astro";
 
 interface Props {
   title?: string;
@@ -20,14 +19,16 @@ const {
   buttonHref = "/es/proyecto",
   buttonPortalText = "Acceder al portal",
   buttonPortalHref = "https://inv-es.portalcientifico.es/",
-  badgeText = "Espacio común de conocimiento compartido"
+  badgeText = "Espacio común de conocimiento compartido",
 } = Astro.props;
 ---
 
-<section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+<section
+  class="relative h-screen min-h-[600px] flex items-center overflow-hidden reveal"
+>
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0">
-    <Image 
+    <Image
       src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
       alt="Abstract network connections representing scientific collaboration"
       class="w-full h-full object-cover"
@@ -36,48 +37,96 @@ const {
       decoding="async"
       fetchpriority="high"
     />
-    <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+    <div
+      class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"
+    >
+    </div>
   </div>
 
   <!-- Content -->
   <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl">
-      <div class="inline-flex items-center px-4 py-2 mb-6 bg-blue-50/10 border border-blue-200/20 text-blue-50 text-sm font-medium tracking-wide rounded-full shadow-lg backdrop-blur-sm">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+      <div
+        class="inline-flex items-center px-4 py-2 mb-6 bg-blue-50/10 border border-blue-200/20 text-blue-50 text-sm font-medium tracking-wide rounded-full shadow-lg backdrop-blur-sm"
+      >
+        <svg
+          class="w-4 h-4 mr-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
         </svg>
         {badgeText}
       </div>
-      
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+      >
         {title}
       </h1>
-      
-      <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
+
+      <p
+        class="text-xl md:text-2xl text-slate-200 mb-8 max-w-2xl leading-relaxed"
+      >
         {subtitle}
       </p>
-      
+
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <Button href={buttonHref} size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+        <Button
+          href={buttonHref}
+          size="lg"
+          class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!"
+        >
           {buttonText}
         </Button>
-        <Button href={buttonPortalHref} size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!" target="_blank" rel="noopener noreferrer">
+        <Button
+          href={buttonPortalHref}
+          size="lg"
+          variant="outline"
+          class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {buttonPortalText}
-          <svg class="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          <svg
+            class="inline-block w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
           </svg>
         </Button>
       </div>
-
-
     </div>
   </div>
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    <svg
+      class="w-6 h-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
   </div>
 </section>
-

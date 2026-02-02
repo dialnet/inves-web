@@ -1,5 +1,5 @@
 ---
-import UniversityCard from './UniversityCard.astro';
+import UniversityCard from "./UniversityCard.astro";
 
 interface University {
   name: string;
@@ -20,48 +20,162 @@ const {
   mainTitle = "Universidades Participantes",
   desc = "El proyecto inv-es es posible gracias a la colaboración de numerosas instituciones académicas.",
   sponsorsTitle = "Universidades Patrocinadoras",
-  participantsTitle = "Otras Universidades Participantes"
+  participantsTitle = "Otras Universidades Participantes",
 } = Astro.props;
 
 const sponsoringUniversities: University[] = [
-  { name: "Universidad de Alcalá", logo: import.meta.env.BASE_URL + "logos/UAH.png", url: "https://www.uah.es" },
-  { name: "Universidad de Burgos", logo: import.meta.env.BASE_URL + "logos/UBU.png", url: "https://www.ubu.es" },
-  { name: "Universidade da Coruña", logo: import.meta.env.BASE_URL + "logos/UDC.png", url: "https://www.udc.es" },
-  { name: "Universidad de Cádiz", logo: import.meta.env.BASE_URL + "logos/UCA.png", url: "https://www.uca.es" },
-  { name: "Universidad de La Laguna", logo: import.meta.env.BASE_URL + "logos/ULL.png", url: "https://www.ull.es" },
-  { name: "Universidad de La Rioja", logo: import.meta.env.BASE_URL + "logos/UR.png", url: "https://www.unirioja.es" },
-  { name: "Universidad de León", logo: import.meta.env.BASE_URL + "logos/UNILEON.png", url: "https://www.unileon.es" },
-  { name: "Universidad de Murcia", logo: import.meta.env.BASE_URL + "logos/UM.png", url: "https://www.um.es" },
-  { name: "Universidad de Málaga", logo: import.meta.env.BASE_URL + "logos/UMA.png", url: "https://www.uma.es" },
-  { name: "UNED", logo: import.meta.env.BASE_URL + "logos/UNED.png", url: "https://www.uned.es" },
-  { name: "Universidad Pablo de Olavide", logo: import.meta.env.BASE_URL + "logos/UPO.png", url: "https://www.upo.es" },
-  { name: "Universidad del País Vasco / EHU", logo: import.meta.env.BASE_URL + "logos/EHU.png", url: "https://www.ehu.eus" },
-  { name: "Universidad de Salamanca", logo: import.meta.env.BASE_URL + "logos/USAL.png", url: "https://www.usal.es" },
-  { name: "Universidade de Santiago de Compostela", logo: import.meta.env.BASE_URL + "logos/USC.png", url: "https://www.usc.es" },
-  { name: "Universidad de Valladolid", logo: import.meta.env.BASE_URL + "logos/UVA.png", url: "https://www.uva.es" },
-  { name: "Universitat de València", logo: import.meta.env.BASE_URL + "logos/UV.png", url: "https://www.uv.es" }
+  {
+    name: "Universidad de Alcalá",
+    logo: import.meta.env.BASE_URL + "logos/UAH.png",
+    url: "https://www.uah.es",
+  },
+  {
+    name: "Universidad de Burgos",
+    logo: import.meta.env.BASE_URL + "logos/UBU.png",
+    url: "https://www.ubu.es",
+  },
+  {
+    name: "Universidade da Coruña",
+    logo: import.meta.env.BASE_URL + "logos/UDC.png",
+    url: "https://www.udc.es",
+  },
+  {
+    name: "Universidad de Cádiz",
+    logo: import.meta.env.BASE_URL + "logos/UCA.png",
+    url: "https://www.uca.es",
+  },
+  {
+    name: "Universidad de La Laguna",
+    logo: import.meta.env.BASE_URL + "logos/ULL.png",
+    url: "https://www.ull.es",
+  },
+  {
+    name: "Universidad de La Rioja",
+    logo: import.meta.env.BASE_URL + "logos/UR.png",
+    url: "https://www.unirioja.es",
+  },
+  {
+    name: "Universidad de León",
+    logo: import.meta.env.BASE_URL + "logos/UNILEON.png",
+    url: "https://www.unileon.es",
+  },
+  {
+    name: "Universidad de Murcia",
+    logo: import.meta.env.BASE_URL + "logos/UM.png",
+    url: "https://www.um.es",
+  },
+  {
+    name: "Universidad de Málaga",
+    logo: import.meta.env.BASE_URL + "logos/UMA.png",
+    url: "https://www.uma.es",
+  },
+  {
+    name: "UNED",
+    logo: import.meta.env.BASE_URL + "logos/UNED.png",
+    url: "https://www.uned.es",
+  },
+  {
+    name: "Universidad Pablo de Olavide",
+    logo: import.meta.env.BASE_URL + "logos/UPO.png",
+    url: "https://www.upo.es",
+  },
+  {
+    name: "Universidad del País Vasco / EHU",
+    logo: import.meta.env.BASE_URL + "logos/EHU.png",
+    url: "https://www.ehu.eus",
+  },
+  {
+    name: "Universidad de Salamanca",
+    logo: import.meta.env.BASE_URL + "logos/USAL.png",
+    url: "https://www.usal.es",
+  },
+  {
+    name: "Universidade de Santiago de Compostela",
+    logo: import.meta.env.BASE_URL + "logos/USC.png",
+    url: "https://www.usc.es",
+  },
+  {
+    name: "Universidad de Valladolid",
+    logo: import.meta.env.BASE_URL + "logos/UVA.png",
+    url: "https://www.uva.es",
+  },
+  {
+    name: "Universitat de València",
+    logo: import.meta.env.BASE_URL + "logos/UV.png",
+    url: "https://www.uv.es",
+  },
 ];
 
 const participatingUniversities: University[] = [
-  { name: "Universidad de Alicante", logo: import.meta.env.BASE_URL + "logos/UA.png", url: "https://www.ua.es" },
-  { name: "Universidad Complutense de Madrid", logo: import.meta.env.BASE_URL + "logos/UCM.png", url: "https://www.ucm.es" },
-  { name: "Universidad de Granada", logo: import.meta.env.BASE_URL + "logos/UGR.png", url: "https://www.ugr.es" },
-  { name: "Universidad de Huelva", logo: import.meta.env.BASE_URL + "logos/UHU.png", url: "https://www.uhu.es" },
-  { name: "Universidad de Jaén", logo: import.meta.env.BASE_URL + "logos/UJAEN.png", url: "https://www.ujaen.es" },
-  { name: "Universitat de Lleida", logo: import.meta.env.BASE_URL + "logos/UDL.png", url: "https://www.udl.cat" },
-  { name: "Universidad de Oviedo", logo: import.meta.env.BASE_URL + "logos/UNIOVI.png", url: "https://www.uniovi.es" },
-  { name: "Universidad Politécnica de Cartagena", logo: import.meta.env.BASE_URL + "logos/UPCT.png", url: "https://www.upct.es" },
-  { name: "Universidad Pública de Navarra", logo: import.meta.env.BASE_URL + "logos/UNAVARRA.png", url: "https://www.unavarra.es" },
-  { name: "Universidad Miguel Hernández", logo: import.meta.env.BASE_URL + "logos/UMH.png", url: "https://www.umh.es" },
-  { name: "Universitat de les Illes Balears", logo: import.meta.env.BASE_URL + "logos/UIB.png", url: "https://www.uib.es" },
-  { name: "Universitat Jaume I", logo: import.meta.env.BASE_URL + "logos/UJI.png", url: "https://www.uji.es" }
+  {
+    name: "Universidad de Alicante",
+    logo: import.meta.env.BASE_URL + "logos/UA.png",
+    url: "https://www.ua.es",
+  },
+  {
+    name: "Universidad Complutense de Madrid",
+    logo: import.meta.env.BASE_URL + "logos/UCM.png",
+    url: "https://www.ucm.es",
+  },
+  {
+    name: "Universidad de Granada",
+    logo: import.meta.env.BASE_URL + "logos/UGR.png",
+    url: "https://www.ugr.es",
+  },
+  {
+    name: "Universidad de Huelva",
+    logo: import.meta.env.BASE_URL + "logos/UHU.png",
+    url: "https://www.uhu.es",
+  },
+  {
+    name: "Universidad de Jaén",
+    logo: import.meta.env.BASE_URL + "logos/UJAEN.png",
+    url: "https://www.ujaen.es",
+  },
+  {
+    name: "Universitat de Lleida",
+    logo: import.meta.env.BASE_URL + "logos/UDL.png",
+    url: "https://www.udl.cat",
+  },
+  {
+    name: "Universidad de Oviedo",
+    logo: import.meta.env.BASE_URL + "logos/UNIOVI.png",
+    url: "https://www.uniovi.es",
+  },
+  {
+    name: "Universidad Politécnica de Cartagena",
+    logo: import.meta.env.BASE_URL + "logos/UPCT.png",
+    url: "https://www.upct.es",
+  },
+  {
+    name: "Universidad Pública de Navarra",
+    logo: import.meta.env.BASE_URL + "logos/UNAVARRA.png",
+    url: "https://www.unavarra.es",
+  },
+  {
+    name: "Universidad Miguel Hernández",
+    logo: import.meta.env.BASE_URL + "logos/UMH.png",
+    url: "https://www.umh.es",
+  },
+  {
+    name: "Universitat de les Illes Balears",
+    logo: import.meta.env.BASE_URL + "logos/UIB.png",
+    url: "https://www.uib.es",
+  },
+  {
+    name: "Universitat Jaume I",
+    logo: import.meta.env.BASE_URL + "logos/UJI.png",
+    url: "https://www.uji.es",
+  },
 ];
 ---
 
-<section id="proyecto" class="py-24 bg-linear-to-b from-slate-50 to-white">
+<section id="universidades" class="py-24 bg-linear-to-b from-slate-50 to-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+    <div class="text-center mb-16 reveal">
+      <div
+        class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full"
+      >
         {collabTitle}
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
@@ -74,23 +188,48 @@ const participatingUniversities: University[] = [
 
     <!-- Sponsoring Universities -->
     <div class="mb-16">
-      <h3 class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200">{sponsorsTitle}</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
-        {sponsoringUniversities.map((uni) => (
-          <UniversityCard name={uni.name} logo={uni.logo} url={uni.url} />
-        ))}
+      <h3
+        class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200"
+      >
+        {sponsorsTitle}
+      </h3>
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch"
+      >
+        {
+          sponsoringUniversities.map((uni) => (
+            <UniversityCard
+              name={uni.name}
+              logo={uni.logo}
+              url={uni.url}
+              class="reveal"
+            />
+          ))
+        }
       </div>
     </div>
 
     <!-- Other Participating Universities -->
     <div>
-      <h3 class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200">{participantsTitle}</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
-        {participatingUniversities.map((uni) => (
-          <UniversityCard name={uni.name} logo={uni.logo} url={uni.url} />
-        ))}
+      <h3
+        class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200"
+      >
+        {participantsTitle}
+      </h3>
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch"
+      >
+        {
+          participatingUniversities.map((uni) => (
+            <UniversityCard
+              name={uni.name}
+              logo={uni.logo}
+              url={uni.url}
+              class="reveal"
+            />
+          ))
+        }
       </div>
     </div>
-    
   </div>
 </section>

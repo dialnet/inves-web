@@ -1,6 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-const techDashboardImg = "https://loremflickr.com/1200/800/technology,dashboard";
+import { Image } from "astro:assets";
+const techDashboardImg =
+  "https://loremflickr.com/1200/800/technology,dashboard";
 
 interface Technology {
   title: string;
@@ -8,7 +9,6 @@ interface Technology {
   iconGradient: string;
   iconPath: string;
 }
-
 
 interface Props {
   projectLabel?: string;
@@ -35,7 +35,7 @@ const {
   futureTitle = "Acciones Futuras",
   futureDesc = "Incorporación progresiva de nuevas universidades y desarrollo de herramientas de análisis bibliométrico avanzado.",
   frameTitle = "Marco Institucional",
-  frameDesc = "Iniciativa conjunta de las universidades españolas bajo el amparo del Ministerio de Ciencia, Innovación y Universidades (UniDigital)."
+  frameDesc = "Iniciativa conjunta de las universidades españolas bajo el amparo del Ministerio de Ciencia, Innovación y Universidades (UniDigital).",
 } = Astro.props;
 
 const technologies: Technology[] = [
@@ -43,42 +43,64 @@ const technologies: Technology[] = [
     title: originTitle,
     description: originDesc,
     iconGradient: "from-blue-500 to-blue-600",
-    iconPath: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+    iconPath:
+      "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4",
   },
   {
     title: objectiveTitle,
     description: objectiveDesc,
     iconGradient: "from-teal-500 to-teal-600",
-    iconPath: "M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+    iconPath:
+      "M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z",
   },
   {
     title: futureTitle,
     description: futureDesc,
     iconGradient: "from-blue-500 to-blue-600",
-    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
     title: frameTitle,
     description: frameDesc,
     iconGradient: "from-teal-500 to-teal-600",
-    iconPath: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-  }
+    iconPath:
+      "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+  },
 ];
 ---
 
-<section class="py-24 bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+<section
+  class="py-24 bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden reveal"
+>
   <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div
+      class="absolute inset-0"
+      style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"
+    >
+    </div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Content -->
       <div>
-        <div class="inline-flex items-center px-4 py-2 mb-4 bg-blue-50/10 border border-blue-200/20 text-blue-50 text-sm font-medium tracking-wide rounded-full backdrop-blur-sm">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        <div
+          class="inline-flex items-center px-4 py-2 mb-4 bg-blue-50/10 border border-blue-200/20 text-blue-50 text-sm font-medium tracking-wide rounded-full backdrop-blur-sm"
+        >
+          <svg
+            class="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
           </svg>
           {projectLabel}
         </div>
@@ -91,40 +113,70 @@ const technologies: Technology[] = [
 
         <!-- Technology Features -->
         <div class="space-y-6">
-          {technologies.map((tech) => (
-            <div class="flex items-start group">
-              <div class={`shrink-0 w-12 h-12 rounded-lg bg-linear-to-br ${tech.iconGradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}>
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tech.iconPath} />
-                </svg>
+          {
+            technologies.map((tech) => (
+              <div class="flex items-start group">
+                <div
+                  class={`shrink-0 w-12 h-12 rounded-lg bg-linear-to-br ${tech.iconGradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={tech.iconPath}
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-white mb-2">
+                    {tech.title}
+                  </h3>
+                  <p class="text-slate-400 leading-relaxed">
+                    {tech.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold text-white mb-2">{tech.title}</h3>
-                <p class="text-slate-400 leading-relaxed">
-                  {tech.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
       <!-- Visual -->
       <div class="relative">
         <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <Image 
+          <Image
             src={techDashboardImg}
             alt="Advanced logistics technology dashboard"
             class="w-full h-full object-cover"
             width={1200}
             height={800}
           />
-          <div class="absolute inset-0 bg-linear-to-br from-blue-900/80 via-teal-900/60 to-blue-900/80"></div>
+          <div
+            class="absolute inset-0 bg-linear-to-br from-blue-900/80 via-teal-900/60 to-blue-900/80"
+          >
+          </div>
           <div class="absolute inset-0 flex items-center justify-center p-8">
             <div class="text-center">
-              <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-linear-to-br from-blue-500 to-teal-500 flex items-center justify-center shadow-2xl">
-                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full bg-linear-to-br from-blue-500 to-teal-500 flex items-center justify-center shadow-2xl"
+              >
+                <svg
+                  class="w-12 h-12 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
               <h3 class="text-2xl font-bold text-white mb-2">Portal Inv-es</h3>
@@ -132,23 +184,30 @@ const technologies: Technology[] = [
             </div>
           </div>
         </div>
-        
+
         <!-- Floating Cards -->
-        <div class="absolute -top-4 -right-4 bg-white rounded-lg p-4 shadow-xl z-20 animate-pulse">
+        <div
+          class="absolute -top-4 -right-4 bg-white rounded-lg p-4 shadow-xl z-20 animate-pulse"
+        >
           <div class="flex items-center">
             <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-            <span class="text-sm font-semibold text-slate-900">Datos Verificados</span>
+            <span class="text-sm font-semibold text-slate-900"
+              >Datos Verificados</span
+            >
           </div>
         </div>
-        <div class="absolute -bottom-4 -left-4 bg-white rounded-lg p-4 shadow-xl z-20 animate-pulse" style="animation-delay: 0.5s;">
+        <div
+          class="absolute -bottom-4 -left-4 bg-white rounded-lg p-4 shadow-xl z-20 animate-pulse"
+          style="animation-delay: 0.5s;"
+        >
           <div class="flex items-center">
             <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-            <span class="text-sm font-semibold text-slate-900">Actualización Continua</span>
+            <span class="text-sm font-semibold text-slate-900"
+              >Actualización Continua</span
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-

@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  icon?: string;
+  variant?: "default" | "highlighted" | "bordered";
+  padding?: "small" | "medium" | "large";
+}
+
+const { title, icon, variant = "default", padding = "medium" } = Astro.props;
+
+const variantClasses = {
+  default: "bg-white border border-slate-200 shadow-sm hover:shadow-md",
+  highlighted:
+    "bg-gradient-to-br from-blue-50 to-teal-50 border border-blue-200 shadow-md hover:shadow-lg",
+  bordered: "bg-white border-2 border-slate-300 shadow-sm hover:shadow-md",
+};
+
+const paddingClasses = {
+  small: "p-4",
+  medium: "p-6",
+  large: "p-8",
+};
+---
+
+<div
+  class={`${variantClasses[variant]} ${paddingClasses[padding]} rounded-xl transition-shadow duration-300`}
+>
+  {
+    (icon || title) && (
+      <div class="mb-4 flex items-start space-x-4">
+        {icon && (
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white shadow-md">
+            <div set:html={icon} class="w-6 h-6" />
+          </div>
+        )}
+        {title && (
+          <h3 class="text-2xl font-bold text-slate-900 flex-1">{title}</h3>
+        )}
+      </div>
+    )
+  }
+  <div class="text-slate-700 leading-relaxed">
+    <slot />
+  </div>
+</div>

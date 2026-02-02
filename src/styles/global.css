@@ -5,6 +5,19 @@
   --color-slate-600: var(--color-slate-800);
 }
 
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;
@@ -35,6 +48,24 @@ html {
   }
 }
 
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -48,4 +79,22 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Estilos críticos para Radix UI Accordion */
+[data-radix-accordion-content] {
+  overflow: hidden;
+}
+
+[data-radix-accordion-content][data-state='open'] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+[data-radix-accordion-content][data-state='closed'] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+/* Fallback para asegurar visibilidad si la animación falla */
+[data-state='open'] > [data-radix-accordion-content] {
+  height: auto;
 }

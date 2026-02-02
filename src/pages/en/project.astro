@@ -1,0 +1,594 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentSection from "../../components/content/ContentSection.astro";
+import ContentCard from "../../components/content/ContentCard.astro";
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 py-20"
+  >
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">PROJECT</h1>
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+        Collective Research Portal of Spanish Universities
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT IS INV.ES? -->
+  <ContentSection
+    background="white"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-collab-bg.png"
+  >
+    <ContentCard variant="highlighted" padding="large">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">WHAT IS INV.ES?</h2>
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.es is the <span class="font-semibold text-blue-700"
+            >gateway to Spanish scientific production</span
+          >, a collaborative platform that unifies and makes visible the results
+          of research carried out in public universities.
+        </p>
+        <p>
+          It is an initiative promoted by the <span
+            class="font-semibold text-slate-900"
+            >Conference of Rectors of Spanish Universities (CRUE)</span
+          > and developed by the <span class="font-semibold text-slate-900"
+            >Dialnet Foundation</span
+          >, which aims to create a shared, sustainable information system
+          governed by the academic community itself.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- ORIGIN -->
+  <ContentSection
+    background="slate"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-origin-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">ORIGIN</h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Recovery, Transformation, and Resilience Plan
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES emerges within the framework of the Recovery, Transformation,
+          and Resilience Plan, through the UniDigital program, promoted by the
+          Ministry of Universities to advance the modernization and
+          digitalization of the Spanish university system.
+        </p>
+        <p>
+          The project is developed under Royal Decree 641/2021, which regulates
+          the direct granting of subsidies to Spanish public universities for
+          investment in digital infrastructures, technological developments, and
+          collaborative inter-university projects of general interest to the
+          university system.
+        </p>
+        <p>
+          In this context, the University of La Rioja, as coordinating
+          university, presented in November 2021 the proposal for the
+          inter-university project Collective Research Portal of Spanish
+          Universities (INV.ES). The project was conceived from its inception as
+          a collaborative initiative, aligned with the objectives of UniDigital
+          and oriented towards generating a shared, reusable, and sustainable
+          solution.
+        </p>
+        <p>
+          The technical management and development of the project have been
+          undertaken by the Dialnet Foundation, which has made the Dialnet CRIS
+          technology available to INV.ES, a consolidated infrastructure widely
+          implemented in the university sector, guaranteeing interoperability,
+          scalability, and utilization of the portal by the entire Spanish
+          university system.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- A COLLABORATIVE PROJECT -->
+  <ContentSection background="white" maxWidth="wide" paddingY="small">
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-slate-900 mb-2">
+          A COLLABORATIVE PROJECT
+        </h2>
+        <p class="text-sm text-slate-600 font-medium">
+          Spanish public universities and Dialnet Foundation
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES is the result of collaboration between Spanish public
+          universities, with the Dialnet Foundation as the entity responsible
+          for technical management and technological development of the project.
+        </p>
+        <p>
+          In addition to the University of La Rioja, participants in the
+          creation included the University of Santiago de Compostela, University
+          of Burgos, University of Salamanca, University of Cádiz, University of
+          La Laguna, Pablo de Olavide University, University of Vigo, University
+          of León, University of Alcalá, University of A Coruña, University of
+          Valladolid, and the National Distance Education University (UNED).
+        </p>
+        <p>
+          More public universities have joined these, reaching the <a
+            href="/en#universidades"
+            class="text-blue-600 hover:text-blue-800 underline font-semibold"
+            >current 29</a
+          >.
+        </p>
+        <p>
+          The solution is based on Dialnet CRIS technology, a consolidated and
+          widely implemented system that allows integrating data from multiple
+          institutions, ensuring their quality and offering them homogeneously,
+          without dependencies on proprietary software. This approach ensures
+          scalability, interoperability, and utilization of the portal by the
+          entire university system.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- OPEN SCIENCE -->
+  <ContentSection
+    background="slate"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-science-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">
+          BOOSTING OPEN SCIENCE
+        </h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Transparency, accessibility and global collaboration
+        </p>
+      </div>
+    </div>
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES is conceived from its origin as an infrastructure aligned with
+          the principles of open science, understood as a model that promotes
+          transparency, free access to scientific knowledge, and the reuse of
+          research results to maximize their social, academic, and economic
+          impact.
+        </p>
+        <p>
+          The portal facilitates unified access to the scientific production of
+          Spanish public universities, prominently incorporating results
+          available in open access and favoring their visibility and
+          dissemination through a single consultation point. In this way, INV.ES
+          contributes to reducing barriers to access to scientific information
+          and to strengthening the role of universities as generators and
+          transmitters of open knowledge.
+        </p>
+        <p>
+          Furthermore, INV.ES promotes interoperability and reuse of scientific
+          information, through the standardization of data from multiple
+          institutions and the adoption of common information models. This
+          approach facilitates the exploitation of data by researchers,
+          universities, institutional leaders, and other agents of the science,
+          technology, and innovation system.
+        </p>
+        <p>
+          The portal also incorporates analysis and visualization tools that
+          allow contextualizing research activity, identifying collaboration
+          networks, and analyzing trends, contributing to greater transparency
+          in the evaluation and monitoring of university research.
+        </p>
+        <p>
+          In line with international commitments on open science, INV.ES offers
+          an aggregated presentation of scientific production linked to the
+          Sustainable Development Goals (SDGs), highlighting the contribution of
+          Spanish universities to major social, economic, and environmental
+          challenges.
+        </p>
+        <p>
+          Through this approach, INV.ES establishes itself as a strategic
+          infrastructure for advancing towards a more open, accessible,
+          collaborative, and impact-oriented research ecosystem, strengthening
+          knowledge transfer and the social return on public investment in
+          research.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- CHALLENGES -->
+  <ContentSection
+    background="white"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-origin-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">CHALLENGES</h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Strategic, technological, and organizational challenges
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          The development of INV.ES has involved addressing a series of
+          strategic, technological, and organizational challenges, derived both
+          from its inter-university character and from its vocation to serve the
+          entire Spanish university system.
+        </p>
+        <p>
+          One of the main challenges is the integration of information from
+          multiple universities, each with its own systems, organizational
+          structures, and data models. To this end, INV.ES has worked on
+          defining a shared common language, capable of harmonizing and
+          standardizing scientific information, ensuring its coherence, quality,
+          and comparability.
+        </p>
+        <p>
+          Associated with this, the project addresses the challenge of data
+          deduplication and consolidation, especially regarding publications,
+          authors, research groups, and institutional affiliations. The correct
+          identification of researchers and results is key to offering reliable
+          information and enabling advanced and reusable analyses.
+        </p>
+        <p>
+          Another relevant challenge is the development of a scalable and
+          sustainable technological infrastructure, capable of growing
+          progressively in number of institutions, data volume, and
+          functionalities, without depending on proprietary solutions or
+          limiting its adoption by new universities. INV.ES responds to this
+          challenge by relying on consolidated technology such as Dialnet CRIS
+          and a collaborative model of continuous evolution.
+        </p>
+        <p>
+          INV.ES also faces the challenge of balancing the informative function
+          with the management function, offering a portal that not only serves
+          as a showcase for university research, but can also be integrated into
+          the internal processes of universities and support data-driven
+          decision-making.
+        </p>
+        <p>
+          Likewise, the project faces the challenge of effectively promoting
+          open science, incorporating open data sources, highlighting production
+          in open access, and facilitating the reuse of information, while
+          respecting the regulatory frameworks and institutional policies of
+          each university.
+        </p>
+        <p>
+          Finally, INV.ES addresses the challenge of long-term governance and
+          sustainability, establishing a shared model among participating
+          universities that guarantees the evolution of the portal, its
+          maintenance, and its adaptation to new needs of the university system
+          and the research ecosystem.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- IMPACT - Bento Grid -->
+  <ContentSection background="gradient" maxWidth="wide">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">IMPACT</h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+        INV.ES has a significant impact at different levels of the university
+        and research system, contributing to improving the visibility,
+        efficiency, and social value of research activities developed at Spanish
+        public universities.
+      </p>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto"
+    >
+      <!-- Card 1: Visibility - Large -->
+      <div
+        class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Visibility and Outreach
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          First, the project strengthens the visibility and outreach of
+          university research by offering a single, aggregating access point to
+          scientific production, researchers, research groups, and lines of work
+          developed at different universities. This facilitates both national
+          and international dissemination of knowledge and recognition of the
+          role of universities in scientific and technological advancement.
+        </p>
+      </div>
+
+      <!-- Card 2: Decision Making -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Institutional Decision-Making
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          INV.ES also has a direct impact on institutional decision-making by
+          providing indicators, analysis tools, and visualizations that allow
+          universities and academic and management leaders to have reliable,
+          updated, and comparable information. This approach favors more
+          strategic, evidence-based research management aligned with
+          institutional objectives and public policies.
+        </p>
+      </div>
+
+      <!-- Card 3: Research Community -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Research Community</h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          From the perspective of the research community, INV.ES contributes to
+          improving access to scientific information, identifying collaboration
+          opportunities, and analyzing research networks and trends,
+          facilitating a more connected and collaborative environment between
+          researchers and universities.
+        </p>
+      </div>
+
+      <!-- Card 4: Open Science - Large -->
+      <div
+        class="md:col-span-2 bg-gradient-to-br from-blue-50 to-teal-50 border border-blue-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Promoting Open Science
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          The portal also has a relevant impact in promoting open science by
+          highlighting production in open access, favoring data reuse, and
+          increasing transparency of research activity funded with public funds.
+          In this sense, INV.ES contributes to maximizing the social return on
+          public investment in research.
+        </p>
+      </div>
+
+      <!-- Card 5: Knowledge Transfer -->
+      <div
+        class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Knowledge Transfer and Social Impact
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          INV.ES also strengthens knowledge transfer and social impact by making
+          visible the contribution of university research to the Sustainable
+          Development Goals (SDGs) and major social, economic, and environmental
+          challenges. This perspective allows connecting scientific activity
+          with society's needs and with national and international agendas.
+        </p>
+      </div>
+
+      <!-- Card 6: Structural Impact -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Structural Impact</h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          Finally, the project has a structural impact by consolidating a
+          collaborative and sustainable model, based on shared, reusable, and
+          scalable infrastructures, which strengthens inter-university
+          cooperation and lays the foundations for the future evolution of the
+          portal as a strategic node of the Spanish science, technology, and
+          innovation system.
+        </p>
+      </div>
+    </div>
+  </ContentSection>
+</BaseLayout>
+
+<style>
+  /* Smooth hover effects for Bento Grid cards */
+  .grid > div {
+    transition: all 0.3s ease;
+  }
+
+  .grid > div:hover {
+    transform: translateY(-4px);
+  }
+</style>

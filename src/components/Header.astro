@@ -1,106 +1,169 @@
 ---
-import { NAVIGATION } from '@config/site';
+import { NAVIGATION } from "@config/site";
 
-import MobileMenu from '@components/react/MobileMenu';
+import MobileMenu from "@components/react/MobileMenu";
 
-import { languages } from '../i18n/ui';
+import { languages } from "../i18n/ui";
 
 const { currentPathname } = Astro.props;
 
 // Normalize paths by removing trailing slashes for comparison
-const normalizePath = (path: string) => path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
-const isActiveLink = (href: string) : boolean => {
+const normalizePath = (path: string) =>
+  path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
+const isActiveLink = (href: string): boolean => {
   const normalizedCurrent = normalizePath(currentPathname);
   const normalizedHref = normalizePath(href);
+
+  // Handle hash links (e.g., /es#universidades)
+  if (normalizedHref.includes("#")) {
+    const [path] = normalizedHref.split("#");
+    // Active if we are on the same page base path
+    return normalizedCurrent === path;
+  }
+
   return normalizedCurrent === normalizedHref;
 };
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const purePath = currentPathname.startsWith(base) && base.length > 0
-  ? currentPathname.slice(base.length)
-  : currentPathname;
+const purePath =
+  currentPathname.startsWith(base) && base.length > 0
+    ? currentPathname.slice(base.length)
+    : currentPathname;
 
-const segments = purePath.split('/').filter(Boolean);
-const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] : 'es';
+const segments = purePath.split("/").filter(Boolean);
+const currentLocale =
+  segments[0] && Object.keys(languages).includes(segments[0])
+    ? segments[0]
+    : "es";
 
-const rawNavItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
+const rawNavItems =
+  NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
 
 const formatUrl = (url: string, isExternal: boolean = false) => {
-  if (isExternal || url.startsWith('http://') || url.startsWith('https://')) {
+  if (isExternal || url.startsWith("http://") || url.startsWith("https://")) {
     return url;
   }
   return base + url;
 };
 
-const navItems = rawNavItems.map(item => ({
+const navItems = rawNavItems.map((item) => ({
   ...item,
-  href: formatUrl(item.href, 'external' in item && item.external)
+  href: formatUrl(item.href, "external" in item && item.external),
 }));
 
+// Map of translated slugs between languages
+const slugMap: Record<string, Record<string, string>> = {
+  es: {
+    proyecto: "project",
+    gobernanza: "governance",
+    contacto: "contact",
+  },
+  en: {
+    project: "proyecto",
+    governance: "gobernanza",
+    contact: "contacto",
+  },
+};
+
 const getLocalizedPath = (purePathname: string, locale: string) => {
-  const segments = purePathname.split('/').filter(Boolean);
+  const segments = purePathname.split("/").filter(Boolean);
   const currentLang = segments[0];
-  
+
   if (currentLang && Object.keys(languages).includes(currentLang)) {
     segments[0] = locale;
+
+    // Translate page slugs if needed, only if switching language
+    if (segments.length > 1 && locale !== currentLang) {
+      const pageSlug = segments[1];
+      const translations = slugMap[currentLang];
+      if (translations && translations[pageSlug]) {
+        segments[1] = translations[pageSlug];
+      }
+    }
   } else {
     segments.unshift(locale);
   }
-  
-  return base + '/' + segments.join('/');
-};
 
+  return base + "/" + segments.join("/");
+};
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-sm">
-  <nav class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+<header
+  class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-sm"
+>
+  <nav
+    class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8"
+  >
     <!-- Logo -->
     <div class="flex items-center">
-      <a href={base + '/' + currentLocale} class="flex items-center space-x-3 group">
-        <img src={import.meta.env.BASE_URL + 'logo-azul.svg'} alt="Inv-es logo" class="h-10 w-auto rounded-lg group-hover:scale-110 transition-transform" />
+      <a
+        href={base + "/" + currentLocale}
+        class="flex items-center space-x-3 group"
+      >
+        <img
+          src={import.meta.env.BASE_URL + "logo-azul.svg"}
+          alt="Inv-es logo"
+          class="h-10 w-auto rounded-lg group-hover:scale-110 transition-transform"
+        />
       </a>
     </div>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex lg:items-center lg:space-x-1">
-      {navItems.map((item) => {
-        const isActive = isActiveLink(item.href);
-        const isExternal = 'external' in item && item.external;
-        return (
-        <a
-          href={item.href}
-          target={isExternal ? '_blank' : undefined}
-          rel={isExternal ? 'noopener noreferrer' : undefined}
-          class={`px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`}
-        >
-          {item.name}
-          {isExternal && (
-            <svg class="inline-block w-3 h-3 ml-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
-          )}
-        </a>
-      );
-      })}
+      {
+        navItems.map((item) => {
+          const isActive = isActiveLink(item.href);
+          const isExternal = "external" in item && item.external;
+          return (
+            <a
+              href={item.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              class={`px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all relative group ${isActive ? "nav-active" : ""}`}
+            >
+              {item.name}
+              {isExternal && (
+                <svg
+                  class="inline-block w-3 h-3 ml-1 -mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              )}
+            </a>
+          );
+        })
+      }
     </div>
 
     <!-- Language Selector -->
     <div class="hidden lg:flex lg:items-center lg:space-x-4">
       <div class="flex items-center space-x-3 border-l border-slate-200 pl-4">
-        {Object.keys(languages).map((lang) => {
-           const isCurrentLang = currentLocale === lang;
-           return (
-          <a
-            href={getLocalizedPath(purePath, lang)}
-            class={`text-sm font-semibold transition-colors ${
-              isCurrentLang
-                ? 'text-blue-600' 
-                : 'text-slate-500 hover:text-slate-900'
-            }`}
-          >
-            {lang.toUpperCase()}
-          </a>
-        )})}
+        {
+          Object.keys(languages).map((lang) => {
+            const isCurrentLang = currentLocale === lang;
+            return (
+              <a
+                href={getLocalizedPath(purePath, lang)}
+                class={`text-sm font-semibold transition-colors ${
+                  isCurrentLang
+                    ? "text-blue-600"
+                    : "text-slate-500 hover:text-slate-900"
+                }`}
+              >
+                {lang.toUpperCase()}
+              </a>
+            );
+          })
+        }
       </div>
     </div>
 

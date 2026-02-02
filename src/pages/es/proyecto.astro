@@ -1,0 +1,606 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentSection from "../../components/content/ContentSection.astro";
+import ContentCard from "../../components/content/ContentCard.astro";
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 py-20"
+  >
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">PROYECTO</h1>
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+        Portal Colectivo de la Investigación de las Universidades Españolas
+      </p>
+    </div>
+  </section>
+
+  <!-- ¿QUÉ ES INV.ES? -->
+  <ContentSection background="white" maxWidth="wide" paddingY="small">
+    <ContentCard variant="highlighted" padding="large">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">¿QUÉ ES INV.ES?</h2>
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES es el Portal Colectivo de la Investigación de las Universidades
+          Españolas, una infraestructura digital de ámbito nacional que agrega,
+          organiza y pone en valor la producción científica generada por las
+          universidades públicas españolas.
+        </p>
+        <p>
+          El portal actúa como un nodo central de información sobre
+          investigación, ofreciendo acceso unificado a resultados científicos,
+          investigadores, grupos de investigación e indicadores, así como
+          herramientas avanzadas de análisis y explotación de datos. INV.ES está
+          orientado tanto a la comunidad investigadora como a las propias
+          universidades y al sistema nacional de investigación, facilitando la
+          visibilidad, el análisis y la transferencia del conocimiento.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- ORIGEN -->
+  <ContentSection
+    background="slate"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-origin-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">ORIGEN</h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Plan de Recuperación, Transformación y Resiliencia
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES surge en el marco del Plan de Recuperación, Transformación y
+          Resiliencia, a través del programa UniDigital, impulsado por el
+          Ministerio de Universidades para promover la modernización y
+          digitalización del sistema universitario español.
+        </p>
+        <p>
+          El proyecto se desarrolla al amparo del Real Decreto 641/2021, que
+          regula la concesión directa de subvenciones a las universidades
+          públicas españolas para la inversión en infraestructuras digitales,
+          desarrollos tecnológicos y proyectos interuniversitarios colaborativos
+          de interés general para el sistema universitario.
+        </p>
+        <p>
+          En este contexto, la Universidad de La Rioja, como universidad
+          coordinadora, presentó en noviembre de 2021 la propuesta del proyecto
+          interuniversitario Portal Colectivo de la Investigación de las
+          Universidades Españolas (INV.ES). El proyecto fue concebido desde su
+          origen como una iniciativa colaborativa, alineada con los objetivos de
+          UniDigital y orientada a generar una solución compartida, reutilizable
+          y sostenible.
+        </p>
+        <p>
+          La gestión técnica y el desarrollo del proyecto han sido asumidos por
+          la Fundación Dialnet, que ha puesto al servicio de INV.ES la
+          tecnología Dialnet CRIS, una infraestructura consolidada y ampliamente
+          implantada en el ámbito universitario, garantizando la
+          interoperabilidad, la escalabilidad y el aprovechamiento del portal
+          por parte de todo el sistema universitario español.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- UN PROYECTO COLABORATIVO -->
+  <ContentSection
+    background="white"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-collab-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">
+          UN PROYECTO COLABORATIVO
+        </h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Universidades públicas españolas y Fundación Dialnet
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES es el resultado de la colaboración entre universidades públicas
+          españolas, con la Fundación Dialnet como entidad encargada de la
+          gestión técnica y del desarrollo tecnológico del proyecto.
+        </p>
+        <p>
+          Además de la Universidad de La Rioja, participaron en la creación la
+          Universidade de Santiago de Compostela, Universidad de Burgos,
+          Universidad de Salamanca, Universidad de Cádiz, Universidad de La
+          Laguna, Universidad Pablo de Olavide, Universidade de Vigo,
+          Universidad de León, Universidad de Alcalá, Universidade da Coruña,
+          Universidad de Valladolid y la Universidad Nacional de Educación a
+          Distancia (UNED).
+        </p>
+        <p>
+          A estas han ido uniéndose más universidades públicas, hasta las <a
+            href="/es#universidades"
+            class="text-blue-600 hover:text-blue-800 underline font-semibold"
+            >29 actuales</a
+          >.
+        </p>
+        <p>
+          La solución se apoya en la tecnología Dialnet CRIS, un sistema
+          consolidado y ampliamente implantado, que permite integrar datos
+          procedentes de múltiples instituciones, garantizar su calidad y
+          ofrecerlos de forma homogénea, sin dependencias de software
+          propietario. Este enfoque asegura la escalabilidad, la
+          interoperabilidad y el aprovechamiento del portal por parte de todo el
+          sistema universitario.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- CIENCIA ABIERTA -->
+  <ContentSection
+    background="slate"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-science-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">
+          IMPULSO DE LA CIENCIA ABIERTA
+        </h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Transparencia, accesibilidad y colaboración global
+        </p>
+      </div>
+    </div>
+    <ContentCard variant="highlighted" padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          INV.ES se concibe desde su origen como una infraestructura alineada
+          con los principios de la ciencia abierta, entendida como un modelo que
+          promueve la transparencia, el acceso libre al conocimiento científico
+          y la reutilización de los resultados de investigación para maximizar
+          su impacto social, académico y económico.
+        </p>
+        <p>
+          El portal facilita el acceso unificado a la producción científica de
+          las universidades públicas españolas, incorporando de forma destacada
+          los resultados disponibles en acceso abierto y favoreciendo su
+          visibilidad y difusión a través de un único punto de consulta. De este
+          modo, INV.ES contribuye a reducir barreras de acceso a la información
+          científica y a reforzar el papel de las universidades como generadoras
+          y transmisoras de conocimiento abierto.
+        </p>
+        <p>
+          Además, INV.ES promueve la interoperabilidad y reutilización de la
+          información científica, mediante la normalización de datos procedentes
+          de múltiples instituciones y la adopción de modelos comunes de
+          información. Esta aproximación facilita la explotación de los datos
+          por parte de investigadores, universidades, responsables
+          institucionales y otros agentes del sistema de ciencia, tecnología e
+          innovación.
+        </p>
+        <p>
+          El portal incorpora también herramientas de análisis y visualización
+          que permiten contextualizar la actividad investigadora, identificar
+          redes de colaboración y analizar tendencias, contribuyendo a una mayor
+          transparencia en la evaluación y el seguimiento de la investigación
+          universitaria.
+        </p>
+        <p>
+          En línea con los compromisos internacionales en materia de ciencia
+          abierta, INV.ES ofrece una presentación agregada de la producción
+          científica vinculada a los Objetivos de Desarrollo Sostenible (ODS),
+          poniendo de relieve la contribución de las universidades españolas a
+          los grandes retos sociales, económicos y medioambientales.
+        </p>
+        <p>
+          A través de este enfoque, INV.ES se consolida como una infraestructura
+          estratégica para avanzar hacia un ecosistema de investigación más
+          abierto, accesible, colaborativo y orientado al impacto, reforzando la
+          transferencia del conocimiento y el retorno social de la inversión
+          pública en investigación.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- RETOS -->
+  <ContentSection
+    background="white"
+    maxWidth="wide"
+    paddingY="small"
+    backgroundImage="/project-origin-bg.png"
+  >
+    <div class="flex items-start space-x-4 mb-8">
+      <div
+        class="flex-shrink-0 w-16 h-16 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white shadow-lg"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-2">RETOS</h2>
+        <p class="text-sm text-blue-100 font-medium">
+          Transformación digital y eficiencia en la investigación
+        </p>
+      </div>
+    </div>
+    <ContentCard padding="large">
+      <div class="text-lg leading-relaxed space-y-4">
+        <p>
+          El desarrollo de INV.ES ha supuesto afrontar una serie de retos
+          estratégicos, tecnológicos y organizativos, derivados tanto de su
+          carácter interuniversitario como de su vocación de servicio al
+          conjunto del sistema universitario español.
+        </p>
+        <p>
+          Uno de los principales retos es la integración de información
+          procedente de múltiples universidades, cada una con sus propios
+          sistemas, estructuras organizativas y modelos de datos. Para ello,
+          INV.ES ha trabajado en la definición de un lenguaje común compartido,
+          capaz de armonizar y normalizar la información científica,
+          garantizando su coherencia, calidad y comparabilidad.
+        </p>
+        <p>
+          Asociado a ello, el proyecto aborda el desafío de la deduplicación y
+          consolidación de datos, especialmente en lo relativo a publicaciones,
+          autores, grupos de investigación y afiliaciones institucionales. La
+          correcta identificación de investigadores y resultados es clave para
+          ofrecer información fiable y para posibilitar análisis avanzados y
+          reutilizables.
+        </p>
+        <p>
+          Otro reto relevante es el desarrollo de una infraestructura
+          tecnológica escalable y sostenible, capaz de crecer progresivamente en
+          número de instituciones, volumen de datos y funcionalidades, sin
+          depender de soluciones propietarias ni limitar su adopción por parte
+          de nuevas universidades. INV.ES responde a este desafío apoyándose en
+          una tecnología consolidada como Dialnet CRIS y en un modelo
+          colaborativo de evolución continua.
+        </p>
+        <p>
+          INV.ES afronta también el reto de equilibrar la función informativa
+          con la función de gestión, ofreciendo un portal que no solo sirva como
+          escaparate de la investigación universitaria, sino que pueda
+          integrarse en los procesos internos de las universidades y apoyar la
+          toma de decisiones basada en datos.
+        </p>
+        <p>
+          Asimismo, el proyecto se enfrenta al desafío de impulsar la ciencia
+          abierta de forma efectiva, incorporando fuentes de datos abiertas,
+          destacando la producción en acceso abierto y facilitando la
+          reutilización de la información, al tiempo que se respetan los marcos
+          normativos y las políticas institucionales de cada universidad.
+        </p>
+        <p>
+          Finalmente, INV.ES aborda el reto de la gobernanza y sostenibilidad a
+          largo plazo, estableciendo un modelo compartido entre las
+          universidades participantes que garantice la evolución del portal, su
+          mantenimiento y su adaptación a nuevas necesidades del sistema
+          universitario y del ecosistema de investigación.
+        </p>
+      </div>
+    </ContentCard>
+  </ContentSection>
+
+  <!-- IMPACTO - Bento Grid -->
+  <ContentSection background="gradient" maxWidth="wide">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">IMPACTO</h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+        INV.ES tiene un impacto significativo en distintos niveles del sistema
+        universitario y de investigación, contribuyendo a mejorar la
+        visibilidad, la eficiencia y el valor social de la actividad
+        investigadora desarrollada en las universidades públicas españolas.
+      </p>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto"
+    >
+      <!-- Card 1: Visibilidad - Large -->
+      <div
+        class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Visibilidad y Proyección
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          En primer lugar, el proyecto refuerza la visibilidad y proyección de
+          la investigación universitaria, al ofrecer un punto de acceso único y
+          agregador a la producción científica, los investigadores, los grupos
+          de investigación y las líneas de trabajo desarrolladas en las
+          distintas universidades. Esto facilita tanto la difusión nacional e
+          internacional del conocimiento como el reconocimiento del papel de las
+          universidades en el avance científico y tecnológico.
+        </p>
+      </div>
+
+      <!-- Card 2: Toma de Decisiones -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Toma de Decisiones Institucionales
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          INV.ES tiene también un impacto directo en la toma de decisiones
+          institucionales, al proporcionar indicadores, herramientas de análisis
+          y visualizaciones que permiten a las universidades y a los
+          responsables académicos y gestores disponer de información fiable,
+          actualizada y comparable. Este enfoque favorece una gestión de la
+          investigación más estratégica, basada en evidencias y alineada con los
+          objetivos institucionales y las políticas públicas.
+        </p>
+      </div>
+
+      <!-- Card 3: Comunidad Investigadora -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Comunidad Investigadora
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          Desde el punto de vista de la comunidad investigadora, INV.ES
+          contribuye a mejorar el acceso a la información científica, a
+          identificar oportunidades de colaboración y a analizar redes y
+          tendencias de investigación, facilitando un entorno más conectado y
+          colaborativo entre investigadores y universidades.
+        </p>
+      </div>
+
+      <!-- Card 4: Ciencia Abierta - Large -->
+      <div
+        class="md:col-span-2 bg-gradient-to-br from-blue-50 to-teal-50 border border-blue-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Impulso de la Ciencia Abierta
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          El portal tiene asimismo un impacto relevante en el impulso de la
+          ciencia abierta, al poner en valor la producción en acceso abierto,
+          favorecer la reutilización de datos y aumentar la transparencia de la
+          actividad investigadora financiada con fondos públicos. En este
+          sentido, INV.ES contribuye a maximizar el retorno social de la
+          inversión pública en investigación.
+        </p>
+      </div>
+
+      <!-- Card 5: Transferencia del Conocimiento -->
+      <div
+        class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">
+            Transferencia e Impacto Social
+          </h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          INV.ES refuerza además la transferencia del conocimiento y el impacto
+          social, al visibilizar la contribución de la investigación
+          universitaria a los Objetivos de Desarrollo Sostenible (ODS) y a los
+          grandes retos sociales, económicos y medioambientales. Esta
+          perspectiva permite conectar la actividad científica con las
+          necesidades de la sociedad y con las agendas nacionales e
+          internacionales.
+        </p>
+      </div>
+
+      <!-- Card 6: Impacto Estructural -->
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="flex items-start space-x-4 mb-4">
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-md"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Impacto Estructural</h3>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          Finalmente, el proyecto tiene un impacto estructural al consolidar un
+          modelo colaborativo y sostenible, basado en infraestructuras
+          compartidas, reutilizables y escalables, que fortalece la cooperación
+          interuniversitaria y sienta las bases para la evolución futura del
+          portal como un nodo estratégico del sistema español de ciencia,
+          tecnología e innovación.
+        </p>
+      </div>
+    </div>
+  </ContentSection>
+</BaseLayout>
+
+<style>
+  /* Smooth hover effects for Bento Grid cards */
+  .grid > div {
+    transition: all 0.3s ease;
+  }
+
+  .grid > div:hover {
+    transform: translateY(-4px);
+  }
+</style>
