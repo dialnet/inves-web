@@ -5,6 +5,8 @@ import ContentCard from "../../components/content/ContentCard.astro";
 import GovernanceAccordion from "../../components/react/GovernanceAccordion";
 import type { GovernanceBody } from "../../types/governance";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const governanceBodies: GovernanceBody[] = [
   {
     title: "Consejo de Dirección Estratégica",
@@ -73,7 +75,11 @@ const governanceBodies: GovernanceBody[] = [
   <section
     class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 py-20"
   >
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div
+      class="absolute inset-0 bg-repeat opacity-10"
+      style={`background-image: url('${base}/grid.svg')`}
+    >
+    </div>
     <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">GOBERNANZA</h1>
       <p class="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">

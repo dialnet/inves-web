@@ -1,7 +1,9 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ContentSection from "../../components/content/ContentSection.astro";
-import ContentCard from "../../components/content/ContentCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ContentSection from "@components/content/ContentSection.astro";
+import ContentCard from "@components/content/ContentCard.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout>
@@ -9,7 +11,11 @@ import ContentCard from "../../components/content/ContentCard.astro";
   <section
     class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 py-20"
   >
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+    <div
+      class="absolute inset-0 bg-repeat opacity-10"
+      style={`background-image: url('${base}/grid.svg')`}
+    >
+    </div>
     <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">PROJECT</h1>
       <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
@@ -160,7 +166,7 @@ import ContentCard from "../../components/content/ContentCard.astro";
         </p>
         <p>
           More public universities have joined these, reaching the <a
-            href="/en#universidades"
+            href={`${base}/en/#universidades`}
             class="text-blue-600 hover:text-blue-800 underline font-semibold"
             >current 29</a
           >.

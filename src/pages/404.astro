@@ -1,60 +1,98 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { languages, ui, defaultLang } from '../i18n/ui';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { languages, ui, defaultLang } from "../i18n/ui";
 
 const currentPathname = Astro.url.pathname;
-const segments = currentPathname.split('/').filter(Boolean);
-const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] as keyof typeof ui : defaultLang;
+const segments = currentPathname.split("/").filter(Boolean);
+const currentLocale =
+  segments[0] && Object.keys(languages).includes(segments[0])
+    ? (segments[0] as keyof typeof ui)
+    : defaultLang;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const t = ui[currentLocale];
 ---
 
-<BaseLayout title={t['404.title']}>
-  <section class="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-slate-50 to-white py-20">
+<BaseLayout title={t["404.title"]}>
+  <section
+    class="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-slate-50 to-white py-20"
+  >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center">
         <!-- 404 Number -->
         <div class="mb-8">
-          <h1 class="text-9xl md:text-[12rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 leading-none">
+          <h1
+            class="text-9xl md:text-[12rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 leading-none"
+          >
             404
           </h1>
         </div>
 
         <!-- Icon -->
         <div class="mb-8 flex justify-center">
-          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center">
-            <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div
+            class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center"
+          >
+            <svg
+              class="w-12 h-12 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
             </svg>
           </div>
         </div>
 
         <!-- Title -->
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          {t['404.title']}
+          {t["404.title"]}
         </h2>
 
         <!-- Subtitle -->
         <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
-          {t['404.subtitle']}
+          {t["404.subtitle"]}
         </p>
 
         <!-- Button -->
         <a
-          href={`/${currentLocale}`}
+          href={`${base}/${currentLocale}`}
           class="inline-flex items-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 rounded-lg shadow-lg hover:shadow-xl transition-all group"
         >
-          {t['404.button']}
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          {t["404.button"]}
+          <svg
+            class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
 
         <!-- Decorative elements -->
         <div class="mt-16 grid grid-cols-3 gap-4 max-w-md mx-auto opacity-50">
-          <div class="h-2 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full"></div>
-          <div class="h-2 bg-gradient-to-r from-teal-200 to-teal-300 rounded-full"></div>
-          <div class="h-2 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full"></div>
+          <div
+            class="h-2 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full"
+          >
+          </div>
+          <div
+            class="h-2 bg-gradient-to-r from-teal-200 to-teal-300 rounded-full"
+          >
+          </div>
+          <div
+            class="h-2 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full"
+          >
+          </div>
         </div>
       </div>
     </div>
