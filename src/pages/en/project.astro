@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ContentSection from "@components/content/ContentSection.astro";
 import ContentCard from "@components/content/ContentCard.astro";
+import stats from "../../data/stats.json";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -168,8 +169,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           More public universities have joined these, reaching the <a
             href={`${base}/en/#universidades`}
             class="text-blue-600 hover:text-blue-800 underline font-semibold"
-            >current 29</a
-          >.
+            >current {stats.universities}</a>.
         </p>
         <p>
           The solution is based on Dialnet CRIS technology, a consolidated and
