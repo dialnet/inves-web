@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ContentSection from "@components/content/ContentSection.astro";
 import ContentCard from "@components/content/ContentCard.astro";
+import stats from "../../data/stats.json";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -169,8 +170,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           A estas han ido uniéndose más universidades públicas, hasta las <a
             href={`${base}/es/#universidades`}
             class="text-blue-600 hover:text-blue-800 underline font-semibold"
-            >29 actuales</a
-          >.
+            >{stats.universities} actuales</a>.
         </p>
         <p>
           La solución se apoya en la tecnología Dialnet CRIS, un sistema
