@@ -4,15 +4,15 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: process.env.SITE || "https://jomeridi.github.io",
-  base: process.env.NODE_ENV === 'production' ? "/portal-inves/" : "/",
+  site: process.env.SITE || "https://dialnet.github.io",
+  base: process.env.NODE_ENV === 'production' ? "/inves-web/" : "/",
   integrations: [react()],
   image: {
     domains: ["images.unsplash.com"],
   },
   i18n: {
     defaultLocale: "es",
-    locales: ["es", "en", "ca", "eu", "gl"],
+    locales: ["es", "en"],
     routing: {
       prefixDefaultLocale: true
     },
