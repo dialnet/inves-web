@@ -4,12 +4,13 @@ on:
     branches: [main] # Se ejecuta cada vez que se sube algo a main
   schedule:
     - cron: '0 0 * * *' # Se ejecuta todos los días a medianoche
+  workflow_dispatch: # Permite ejecución manual desde la web de GitHub
+
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository
@@ -30,15 +31,11 @@ jobs:
           SCRAPE_URL: ${{ secrets.SCRAPE_URL }}
         run: npm run update-stats
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3 # Acción oficial de Astro
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      - name: Build site
+        run: npm run build
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
