@@ -4,8 +4,8 @@ import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
 import 'dotenv/config';
 
-const USER = process.env.SCRAPE_USER ;
-const PASS = process.env.SCRAPE_PASS ;
+const USER = process.env.SCRAPE_USER;
+const PASS = process.env.SCRAPE_PASS;
 const URL_TO_SCRAPE = process.env.SCRAPE_URL || 'https://inv-es.portalcientifico.es/';
 const OUTPUT_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '../src/data/stats.json');
 
