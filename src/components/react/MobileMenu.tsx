@@ -50,8 +50,8 @@ export default function MobileMenu({ navItems }: Props) {
                 Idioma / Language
               </p>
               <div className="flex space-x-6">
-                <a href="/es" className="text-lg font-bold text-slate-700 hover:text-blue-600 transition-colors">ES</a>
-                <a href="/en" className="text-lg font-bold text-slate-700 hover:text-blue-600 transition-colors">EN</a>
+                <a href={import.meta.env.BASE_URL + "es"} className="text-lg font-bold text-slate-700 hover:text-blue-600 transition-colors">ES</a>
+                <a href={import.meta.env.BASE_URL + "en"} className="text-lg font-bold text-slate-700 hover:text-blue-600 transition-colors">EN</a>
               </div>
             </div>
           </nav>

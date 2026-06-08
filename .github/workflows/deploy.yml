@@ -25,6 +25,7 @@ jobs:
         run: npm ci
 
       - name: Run scraping script
+        continue-on-error: true
         env:
           SCRAPE_USER: ${{ secrets.SCRAPE_USER }}
           SCRAPE_PASS: ${{ secrets.SCRAPE_PASS }}

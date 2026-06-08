@@ -21,6 +21,9 @@ const {
   buttonPortalHref = "https://inv-es.portalcientifico.es/",
   badgeText = "Espacio común de conocimiento compartido",
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const resolvedButtonHref = buttonHref.startsWith("http") ? buttonHref : base + buttonHref;
 ---
 
 <section
@@ -80,7 +83,7 @@ const {
 
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
         <Button
-          href={buttonHref}
+          href={resolvedButtonHref}
           size="lg"
           class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!"
         >
