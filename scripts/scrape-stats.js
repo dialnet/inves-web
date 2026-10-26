@@ -9,7 +9,8 @@ const PASS = process.env.SCRAPE_PASS;
 const URL_TO_SCRAPE = process.env.SCRAPE_URL || 'https://inv-es.portalcientifico.es/';
 const OUTPUT_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '../src/data/stats.json');
 
-async function fetchWithRetry(url, options, retries = 3, backoff = 5000) {
+// Esperas de 30, 60, 90 y 120 s: unos 5 minutos para superar cortes breves del servidor
+async function fetchWithRetry(url, options, retries = 5, backoff = 30000) {
   for (let i = 0; i < retries; i++) {
     try {
       const controller = new AbortController();
@@ -21,8 +22,8 @@ async function fetchWithRetry(url, options, retries = 3, backoff = 5000) {
       if (response.ok) return response;
       
       console.warn(`Attempt ${i + 1} failed with status ${response.status}.`);
-      if (response.status < 500) return response; // Don't retry on 4xx errors
-      
+      if (response.status < 500 || i === retries - 1) return response; // Don't retry on 4xx errors
+
     } catch (err) {
       console.warn(`Attempt ${i + 1} failed with error: ${err.message}.`);
       if (i === retries - 1) throw err;
