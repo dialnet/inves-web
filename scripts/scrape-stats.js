@@ -84,12 +84,32 @@ async function scrapeStats() {
 
     console.log('Scraped data:', stats);
 
+    // Una página de mantenimiento o de error también puede devolver 200: sin contadores no se guarda nada
+    const missing = Object.keys(stats).filter(key => !stats[key] || stats[key] === '0');
+    if (missing.length > 0) {
+      throw new Error(`Missing or zero values for: ${missing.join(', ')}`);
+    }
+
+    // El workflow usa updatedAt para avisar solo cuando las cifras llevan varios días sin actualizarse
+    stats.updatedAt = new Date().toISOString();
+
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(stats, null, 4));
     console.log(`Updated ${OUTPUT_FILE}`);
 
   } catch (error) {
     console.error('Scraping failed final attempt:', error);
+    await logPublicIp();
     process.exit(1);
+  }
+}
+
+// Si el servidor rechaza ciertas IP, sistemas necesita la IP y la hora para buscarlo en sus registros
+async function logPublicIp() {
+  try {
+    const response = await fetch('https://api.ipify.org', { signal: AbortSignal.timeout(10000) });
+    console.error(`Public IP of this machine: ${(await response.text()).trim()} at ${new Date().toISOString()}`);
+  } catch (err) {
+    console.error(`Could not determine public IP: ${err.message}`);
   }
 }
 

@@ -4,10 +4,16 @@ on:
     branches: [main] # Se ejecuta cada vez que se sube algo a main
   schedule:
     - cron: '0 0 * * *' # Se ejecuta todos los días a medianoche
+    - cron: '0 6 * * *' # Segunda ejecución por si la de medianoche no consigue las estadísticas
   workflow_dispatch: # Permite ejecución manual desde la web de GitHub
 
 permissions:
   contents: write
+
+# Evita que dos ejecuciones simultáneas compitan al subir stats.json o al publicar
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -24,13 +30,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Si falla, la web se publica con el último stats.json del repositorio
       - name: Run scraping script
+        id: scrape
         continue-on-error: true
         env:
           SCRAPE_USER: ${{ secrets.SCRAPE_USER }}
           SCRAPE_PASS: ${{ secrets.SCRAPE_PASS }}
           SCRAPE_URL: ${{ secrets.SCRAPE_URL }}
         run: npm run update-stats
+
+      - name: Commit updated stats
+        if: steps.scrape.outcome == 'success'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/stats.json
+          git commit -m "chore: update stats [skip ci]" || echo "No changes to commit"
+          git pull --rebase
+          git push
 
       - name: Build site
         run: npm run build
@@ -40,3 +58,19 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      # Un fallo aislado no avisa; el job falla (y llega el correo) solo si las cifras llevan más de 3 días sin actualizarse
+      - name: Check stats freshness
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          node -e '
+            const { updatedAt } = JSON.parse(require("fs").readFileSync("src/data/stats.json", "utf8"));
+            const days = updatedAt ? (Date.now() - Date.parse(updatedAt)) / 86400000 : Infinity;
+            if (days > 3) {
+              console.error(updatedAt
+                ? `::error::stats.json lleva ${days.toFixed(1)} días sin actualizarse`
+                : "::error::stats.json no tiene fecha de actualización (updatedAt)");
+              process.exit(1);
+            }
+            console.log(`::warning::No se han podido obtener las estadísticas; las publicadas son de hace ${days.toFixed(1)} días`);
+          '
